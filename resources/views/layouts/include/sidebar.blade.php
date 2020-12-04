@@ -40,7 +40,11 @@
               <span>Tambah Pengajuan</span></a>
           </li>
 
-        
+          {{--  <li class="nav-item {{ Request::path() === 'Administrator/pengajuan/create' ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('reset') }}">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Tambah Pengajuan</span></a>
+          </li>  --}}
         <!-- Divider -->
         <hr class="sidebar-divider">
   

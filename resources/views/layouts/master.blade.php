@@ -54,7 +54,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; TIM ABDIMAS 2020</span>
           </div>
         </div>
       </footer>
@@ -124,7 +124,7 @@
                     if(current!=data.jumlah){
                       $('body').data('jumlah',data.jumlah);
                       new PNotify({
-                        title: 'Ada esanan masuk',
+                        title: 'Ada Pesanan masuk',
                         text: 'Silahkan reload '
                       });
                   }
@@ -133,7 +133,7 @@
               
             });
     }
-    setInterval(update, 30);
+    setInterval(update, 3000);
   </script>
   @yield('js')
 

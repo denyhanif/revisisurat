@@ -376,7 +376,7 @@ class WargaController extends Controller
         //dd($kode);
         $pesanan = Pesanan::create([
             'data_pengajuan_id' => $pengajuan->id,
-            'nomer_surat' => $kode.'/ '.'Kec.Ngemplak'. '/'. $ids.' /' . tgl_romawi(Carbon::now()->format('m')).'/'. Carbon::now()->format('Y'),
+        //    'nomer_surat' => $kode.'/ '.'Kec.Ngemplak'. '/'. $ids.' /' . tgl_romawi(Carbon::now()->format('m')).'/'. Carbon::now()->format('Y'),
             'tanggal_pesan' => now(),
         ]);
 
@@ -422,7 +422,7 @@ class WargaController extends Controller
                         ->where('data_pengajuans.id', $id)
                         ->select('data_kelahiran.*','nama_pemesan','nomer_surat')
                         ->first(); 
-                $pdf = PDF::loadview('surat', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('suratkelahiran', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             //keterangan kematian
@@ -438,7 +438,8 @@ class WargaController extends Controller
                         ->where('data_pengajuans.id', $id)
                         ->select('data_kematian.*','nama_pemesan','nomer_surat')
                         ->first(); 
-                $pdf = PDF::loadview('surat', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
+                //return view('suratkematian');
+                $pdf = PDF::loadview('suratkematian', compact('pengajuan','kategori'))->setPaper('a4', 'portrait');
                 return $pdf->stream();
                 break;
             //pengantar umum
@@ -454,7 +455,7 @@ class WargaController extends Controller
                         ->where('data_pengajuans.id', $id)
                         ->select('data_pengantar_umum.*','nama_pemesan','nomer_surat')
                         ->first(); 
-                $pdf = PDF::loadview('surat', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('suratketerangan', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             //pengantar pindah
@@ -470,10 +471,10 @@ class WargaController extends Controller
                         ->where('data_pengajuans.id', $id)
                         ->select('data_pengantar_pindah.*','nama_pemesan','nomer_surat')
                         ->first(); 
-                $pdf = PDF::loadview('surat', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('suratpengantarpindah', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
-            //permohonan pindah
+            //permohonan pindah wni
             case '5':
                 $kategori = DB::table('kategori_surats')
                         ->join('data_pengajuans', 'kategori_surats.id','=','data_pengajuans.kategori_surat_id')
@@ -489,26 +490,26 @@ class WargaController extends Controller
                  $data_kel = DB::table('keluarga_pindah')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
                                 ->get();
-                $pdf = PDF::loadview('surat', compact('pengajuan','kategori','data_kel'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('formpindahwni', compact('pengajuan','kategori','data_kel'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             //pengantar datang
             case '6':
-                $kategori = DB::table('kategori_surats')
-                        ->join('data_pengajuans', 'kategori_surats.id','=','data_pengajuans.kategori_surat_id')
-                        ->where('data_pengajuans.id', $id)
-                        ->select('kategori_surats.*')
+                $nomor_surat = DB::table('pesanans')
+                        ->join('data_pengajuans', 'pesanans.data_pengajuan_id','=','data_pengajuans.id')
+                        ->where('pesanans.data_pengajuan_id', $id)
+                        ->select('pesanans.*')
                         ->first(); 
                 $pengajuan = DB::table('data_pengajuans')
                         ->join('data_surat_pindah_datang', 'data_pengajuans.data','=','data_surat_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_surat_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan','nomer_surat')
+                        ->select('data_surat_pindah_datang.*','data_surat_pindah_datang.id AS id_perm','nama_pemesan','nomer_surat')
                         ->first(); 
-                 $data_kel = DB::table('keluarga_pindah_datang')
+                 $data_kel = DB::table('keluarga_datang')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
                                 ->get();
-                $pdf = PDF::loadview('surat', compact('pengajuan','kategori','data_kel'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('formpindahdatangwni', compact('pengajuan','nomor_surat','data_kel'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             //permohonan datang    
@@ -522,12 +523,12 @@ class WargaController extends Controller
                         ->join('data_permohonan_pindah_datang', 'data_pengajuans.data','=','data_permohonan_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_permohonan_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan','nomer_surat')
+                        ->select('data_permohonan_pindah_datang.*','data_permohonan_pindah_datang.id AS id_perm','nama_pemesan','nomer_surat')
                         ->first(); 
                  $data_kel = DB::table('keluarga_perm_datang')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
                                 ->get();
-                $pdf = PDF::loadview('surat', compact('pengajuan','kategori','data_kel'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('suratketeranganpindahdatang', compact('pengajuan','kategori','data_kel'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             

@@ -29,7 +29,7 @@ class LoginController extends Controller
         $warga = Warga::create([
             'nama' => $request->nama,
             'email' => $request->email,
-            'Password' => $request->password,
+            'password' => $request->password,
         ]);
         return redirect(route('warga.login'))->with(['success' => 'Pendaftaran Berhasil, Silahkan Login']);
     }

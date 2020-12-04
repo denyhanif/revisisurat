@@ -10,13 +10,14 @@
     <div class="row">
         <div class="col-md-12 card shadow mb-4">
             <form class="mt-3 mb-2" action="{{ route('send.verifikasi') }}" method="POST" enctype="multipart/form-data">
-                @csrf                    
+                @csrf     
+                    <input hidden value="{{ $data->data_id }}" name="id_data" >                
                     <input hidden value="{{ $data->pengajuan_id }}" name="id_pengaju" >
                     <input hidden value="{{ $data->pesanan_id }}" name="id_pesanan" >
                     <input hidden value="{{ $data->halaman }}" name="kat" >
                     <div class="form-group col-md-8">
                         <label for="inputState">Nama Pemesan Surat</label>
-                        <input class="form-control" type="text" name="nama_pemesan" value="{{ $data->nama_pemesan }}">
+                        <input class="form-control" type="text" readonly name="nama_pemesan" value="{{ $data->nama_pemesan }}">
                     </div>    
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Data Daerah Asal</h1>
@@ -152,12 +153,13 @@
                             <div class="form-group row">
                             <div class="row col-auto" style="flex: 1 1 1px;">
                                 <div class="col-3">
+                                    <input type="text" hidden name="data[id][]" required value="{{ $item->id }}">
                                     <label>NIK</label>
                                     <input type="text" class="form-control" name="data[nik][]" required value="{{ $item->nik }}">    
                                 </div>
                                 <div class="col-4">
                                     <label>Nama</label>
-                                    <input type="text" class="form-control" name="data[nama][]" required  value="{{ $item->nama }}">    
+                                    <input type="text" class="form-control" name="data[nama_kel][]" required  value="{{ $item->nama }}">    
                                 </div>
                                 <div class="col-3">
                                     <label>Masa Berlaku KTP</label>

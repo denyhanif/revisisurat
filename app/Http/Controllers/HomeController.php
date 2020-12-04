@@ -56,7 +56,7 @@ class HomeController extends Controller
                         ->join('data_kelahiran', 'data_pengajuans.data','=','data_kelahiran.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_kelahiran.*','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan','nomer_surat')
+                        ->select('data_kelahiran.*','data_kelahiran.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
                         ->first();              
         return view('admin.dashboard.verifLahir', compact('data'));
     }
@@ -66,7 +66,7 @@ class HomeController extends Controller
                         ->join('data_kematian', 'data_pengajuans.data','=','data_kematian.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_kematian.*','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan','nomer_surat')
+                        ->select('data_kematian.*','data_kematian.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
                         ->first();              
         return view('admin.dashboard.verifMati', compact('data'));
     }
@@ -76,7 +76,7 @@ class HomeController extends Controller
                         ->join('data_pengantar_umum', 'data_pengajuans.data','=','data_pengantar_umum.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_pengantar_umum.*','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan','nomer_surat')
+                        ->select('data_pengantar_umum.*','data_pengantar_umum.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
                         ->first();              
         return view('admin.dashboard.verifUmum', compact('data'));
     }
@@ -86,7 +86,7 @@ class HomeController extends Controller
                         ->join('data_pengantar_pindah', 'data_pengajuans.data','=','data_pengantar_pindah.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_pengantar_pindah.*','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan','nomer_surat')
+                        ->select('data_pengantar_pindah.*','data_pengantar_pindah.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
                         ->first();              
         return view('admin.dashboard.verifPindah', compact('data'));
     }
@@ -96,14 +96,14 @@ class HomeController extends Controller
                         ->join('data_permohonan_pindah', 'data_pengajuans.data','=','data_permohonan_pindah.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_permohonan_pindah.*','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan','nomer_surat')
+                        ->select('data_permohonan_pindah.*','data_permohonan_pindah.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
                         ->first();
         
         $pengajuan = DB::table('data_pengajuans')
                         ->join('data_permohonan_pindah', 'data_pengajuans.data','=','data_permohonan_pindah.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_permohonan_pindah.*','data_permohonan_pindah.id AS id_perm','nama_pemesan','nomer_surat')
+                        ->select('data_permohonan_pindah.*','data_permohonan_pindah.id AS id_perm','nama_pemesan')
                         ->first(); 
     
         $data_kel = DB::table('keluarga_pindah')
@@ -117,13 +117,13 @@ class HomeController extends Controller
                         ->join('data_surat_pindah_datang', 'data_pengajuans.data','=','data_surat_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_surat_pindah_datang.*','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan','nomer_surat')
+                        ->select('data_surat_pindah_datang.*','data_surat_pindah_datang.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
                         ->first(); 
         $pengajuan = DB::table('data_pengajuans')
                         ->join('data_surat_pindah_datang', 'data_pengajuans.data','=','data_surat_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_surat_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan','nomer_surat')
+                        ->select('data_surat_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan')
                         ->first(); 
         $data_kel = DB::table('keluarga_datang')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
@@ -136,9 +136,20 @@ class HomeController extends Controller
                         ->join('data_permohonan_pindah_datang', 'data_pengajuans.data','=','data_permohonan_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_permohonan_pindah_datang.*','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan','nomer_surat')
-                        ->first();              
-        return view('admin.dashboard.verifPermohonanDatang', compact('data'));
+                        ->select('data_permohonan_pindah_datang.*','data_permohonan_pindah_datang.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
+                        ->first(); 
+
+        $pengajuan = DB::table('data_pengajuans')
+                        ->join('data_permohonan_pindah_datang', 'data_pengajuans.data','=','data_permohonan_pindah_datang.id')
+                        ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
+                        ->where('data_pengajuans.id', $id)
+                        ->select('data_permohonan_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan')
+                        ->first();
+
+        $data_kel = DB::table('keluarga_perm_datang')
+                ->where('id_perm_pindah',$pengajuan->id_perm)
+                ->get();             
+        return view('admin.dashboard.verifPermohonanDatang', compact('data','data_kel'));
     }
 
     public function riwayat()
@@ -150,7 +161,294 @@ class HomeController extends Controller
 
     public function verifikasi(Request $request)
     {
-        dd($request->all());
+        
+          $kat = $request['kat'];
+        $kategori = KategoriSurat::find($kat);
+        switch ($kat) {
+            //kelahiran
+            case ('1'):
+                 $no_surat = '472.11/'.$request->id_pesanan;
+                $update = DB::table('data_kelahiran') 
+                            ->where('id', $request['id_data'])
+                            ->update([
+                              'no_kk' => $request['no_kk'],
+                              'nama_kk' => $request['nm_kk'],
+                              'nik' => $request['nik'],
+                              'nama' => $request['nama_bayi'],
+                              'jk' => $request['jk'],
+                              'tmpt_lahiran' => $request['tmpt_lahiran'],
+                              'tmpt_lahir' => $request['tmpt_lahir'],
+                              'hari_lahir'=> $request['hari_lahir'],
+                              'jam_lahir'=>$request['jam_lahir'],
+                              'tgl_lahir' => $request['tgl_lahir'],
+                              'jenis_kelahiran' => $request['jns_lahiran'],
+                              'kelahiran_ke' => $request['kelahiran_ke'],
+                              'penolong_lahir' => $request['pnlg_kelahiran'],
+                              'berat' => $request['berat'],
+                              'panjang' => $request['panjang'],
+                              'ibu_nik' => $request['ibu_nik'],
+                              'ibu_nama' => $request['ibu_nm'],
+                              'ibu_tmpt_lahir' => $request['ibu_tmpt_lahir'],
+                              'ibu_tgl_lahir' => $request['ibu_tgl_lahir'],
+                              'ibu_pekerjaan' => $request['ibu_pekerjaan'],
+                              'ibu_alamat' => $request['ibu_almt'],
+                              'ibu_kewarganegaraan' => $request['ibu_warganegara'],
+                              'ibu_tgl_kawin' => $request['ibu_tgl_kawin'],
+                              'ayah_nik' => $request['ayah_nik'],
+                              'ayah_nama' => $request['ayah_nm'],
+                              'ayah_tmpt_lahir' => $request['ayah_tmpt_lahir'],
+                              'ayah_tgl_lahir' => $request['ayah_tgl_lahir'],
+                              'ayah_pekerjaan' => $request['ayah_pekerjaan'],
+                              'ayah_alamat' => $request['ayah_almt'],
+                              'ayah_kewarganegaraan' => $request['ayah_warganegara'],
+                              'pelapor_nik' => $request['pelapor_nik'],
+                              'pelapor_nama' => $request['pelapor_nm'],
+                              'pelapor_tmp_lahir' => $request['pelapor_tmpt_lahir'],
+                              'pelapor_tgl_lahir' => $request['pelapor_tgl_lahir'],
+                              'pelapor_kerja' => $request['pelapor_pekerjaan'],
+                              'pelapor_umur' => $request['pelapor_umur'],
+                              'pelapor_alamat' => $request['pelapor_almt'],
+                              'tgl_lapor' => $request['tgl_lapor'],
+                              'saksi_nik' => $request['saksi1_nik'],
+                              'saksi_nama' => $request['saksi1_nm'],
+                              'saksi_umur' => $request['saksi1_umur'],
+                              'saksi_alamat' => $request['saksi1_almt'],
+                              'saksi_2_nik' => $request['saksi2_nik'],
+                              'saksi_2_nama' => $request['saksi2_nm'],
+                              'saksi_2_umur' => $request['saksi2_umur'],
+                              'saksi_2_alamat' => $request['saksi2_almt'],                              
+                            ]);
+              break;
+            //kematian
+            case ('2'):
+                 $no_surat = '472.11/'.$request->id_pesanan;
+              $action = DB::table('data_kematian') 
+                      ->where('id', $request['id_data'])
+                      ->update([
+                        'no_kk' => $request['no_kk'],
+                        'nama_kk' => $request['nm_kk'],
+                        'nik' => $request['nik'],
+                        'nama' => $request['nama'],
+                        'jk' => $request['jk'],
+                        'tmpt_lahir' => $request['tmpt_lahir'],
+                        'hari_meninggal'=>$request['hari_meninggal'],
+                        'tgl_lahir' => $request['tgl_lahir'],
+                        'umur'=>$request['umur'],
+                        'agama' => $request['agama'],
+                        'pekerjaan' => $request['pekerjaan'],
+                        'alamat' => $request['alamat'],
+                        'anak_ke' => $request['anak_ke'],
+                        'meninggal_tgl' => $request['meninggal_tgl'],
+                        'tmpt_meninggal' => $request['tmpt_meninggal'],
+                        'jam_meninggal'=>$request['jam_meninggal'],
+                        'sebab' => $request['sebab'],
+                        'tmpt_kematian' => $request['tmpt_kematian'],
+                        'menerangkan' => $request['menerangkan'],
+                        'ibu_nik'=>$request['ibu_nik'],
+                        'ibu_nama' => $request['ibu_nama'],
+                        'ibu_tmpt_lahir' => $request['ibu_tmpt_lahir'],
+                        'ibu_tgl_lahir' => $request['ibu_tgl_lahir'],
+                        'ibu_pekerjaan' => $request['ibu_pekerjaan'],
+                        'ibu_alamat' => $request['ibu_alamat'],
+                        'ibu_kewarganegaraan' => $request['ibu_kewarganegaraan'],
+                        'ayah_nik' => $request['ayah_nik'],
+                        'ayah_nama' => $request['ayah_nama'],
+                        'ayah_tmpt_lahir' => $request['ayah_tmpt_lahir'],
+                        'ayah_tgl_lahir' => $request['ayah_tgl_lahir'],
+                        'ayah_pekerjaan' => $request['ayah_pekerjaan'],
+                        'ayah_alamat' => $request['ayah_alamat'],
+                        'ayah_kewarganegaraan' => $request['ayah_kewarganegaraan'],
+                        'pelapor_nik' => $request['pelapor_nik'],
+                        'pelapor_nama' => $request['pelapor_nama'],
+                        'pelapor_tmp_lahir' => $request['pelapor_tmpt_lahir'],
+                        'pelapor_tgl_lahir' => $request['pelapor_tgl_lahir'],
+                        'pelapor_kerja' => $request['pelapor_pekerjaan'],
+                        'pelapor_umur' => $request['pelapor_umur'],
+                        'pelapor_alamat' => $request['pelapor_alamat'],
+                        'tgl_lapor' => $request['tgl_lapor'],
+                        'saksi1_nik' => $request['saksi1_nik'],
+                        'saksi1_nama' => $request['saksi1_nama'],
+                        'saksi1_umur' => $request['saksi1_umur'],
+                        'saksi1_alamat' => $request['saksi1_alamat'],  
+                        'saksi2_nik' => $request['saksi2_nik'],
+                        'saksi2_nama' => $request['saksi2_nama'],
+                        'saksi2_umur' => $request['saksi2_umur'],
+                        'saksi2_alamat' => $request['saksi2_alamat'],                              
+                      ]);
+              break;
+            //pengantar umum
+            case ('3'):
+                 $no_surat = '472.11/'.$request->id_pesanan;
+              $action = DB::table('data_pengantar_umum') 
+                        ->where('id', $request['id_data'])
+                        ->update([
+                          'nik' => $request['nik'],
+                          'nama' => $request['nama'],
+                          'jk' => $request['jk'],
+                          'tempat_lahir' => $request['tmpt_lahir'],
+                          'tgl_lahir' => $request['tgl_lahir'],
+                          'agama' => $request['agama'],
+                          'pekerjaan' => $request['pekerjaan'],
+                          'status' => $request['status'],
+                          'alamat' => $request['alamat'],
+                          'tujuan' => $request['tujuan'],
+                          'keperluan' => $request['keperluan'],                              
+                        ]);    
+              break;
+            //pengantar pindah
+            case ('4'):
+                 $no_surat = '472.11/'.$request->id_pesanan;
+              $data = DB::table('data_pengantar_pindah') 
+                        ->where('id', $request['id_data'])
+                        ->update([
+                          'nik' => $request['nik'],
+                          'nama' => $request['nama'],
+                          'tempat_lahir' => $request['tmpt_lahir'],
+                          'tgl_lahir' => $request['tgl_lahir'],
+                          'no_kk' => $request['no_kk'],
+                          'nama_kk' => $request['nama_kk'],
+                          'alamat' => $request['alamat'],
+                          'desa' => $request['desa'],
+                          'desa' => $request['desa'],
+                          'kecamatan' => $request['kecamatan'],
+                          'tujuan_alamat' => $request['tujuan_alamat'],
+                          'tujuan_desa' => $request['tujuan_desa'],
+                          'tujuan_kecamatan' => $request['tujuan_kecamatan'],
+                          'tujuan_kabupaten' => $request['tujuan_kabupaten'],
+                          'tujuan_provinsi' => $request['tujuan_provinsi'],
+                          'jumlah_pindah' => $request['jumlah_pindah'],                              
+                        ]);    
+
+              break;
+            //permohonan pindah
+            case ('5'):
+                 $no_surat = '472.11/'.$request->id_pesanan;
+              $db = DB::table('data_permohonan_pindah') 
+                        ->where('id', $request['id_data'])
+                        ->update([
+                          'no_kk' => $request['no_kk'],
+                          'nama_kk' => $request['nama_kk'],
+                          'alamat' => $request['alamat'],
+                          'desa' => $request['desa'],
+                          'kecamatan' => $request['kecamatan'],
+                          'kab' => $request['kab'],
+                          'provinsi' => $request['provinsi'],
+                          'kodepos' => $request['kodepos'],
+                          'nik_pemohon' => $request['nik_pemohon'],
+                          'tempat_lahir' => $request['tempat_lahir'],
+                          'tgl_lahir' => $request['tgl_lahir'],
+                          'nama' => $request['nama'],
+                          'alasan_pindah' => $request['alasan_pindah'],
+                          'tujuan_desa'=>$request['tujuan_desa'],
+                          'tujuan_kecamatan'=>$request['tujuan_kecamatan'],
+                          'tujuan_alamat_pindah' => $request['tujuan_alamat_pindah'],
+                          'tujuan_kab' => $request['tujuan_kab'],
+                          'tujuan_prov' => $request['tujuan_prov'], 
+                          'tujuan_kodepos' => $request['tujuan_kodepos'], 
+                          'jenis_pindah' => $request['jenis_pindah'],
+                          'status_kk' => $request['status_kk'],  
+                          'status_no_kk_pindah' => $request['status_no_kk_pindah'],                              
+                        ]);    
+              $data = $request['data'];
+              $jml = count($request->data['nik']);
+              for ($i = 0; $i < $jml; $i++) {
+                $keluarga = DB::table('keluarga_pindah') 
+                        ->where('id', $data['id'][$i])
+                        ->update([
+                          'nik' => $data['nik'][$i],
+                          'nama' => $data['nama_kel'][$i],
+                          'masa_berlaku' => $data['masa_berlaku'][$i],  
+                          'shdk' => $data['shdk'][$i],                           
+                        ]); 
+              }  
+              break;
+            //pindah datang
+            case ('6'):
+                 $no_surat = '472.11/'.$request->id_pesanan;;
+                  $db = DB::table('data_surat_pindah_datang') 
+                          ->where('id', $request['id_data'])
+                          ->update([
+                            'no_kk' => $request['no_kk'],
+                            'nama_kk' => $request['nama_kk'],
+                            'alamat' => $request['alamat'],
+                            'desa' => $request['desa'],
+                            'kecamatan' => $request['kecamatan'],
+                            'kabupaten' => $request['kabupaten'],
+                            'provinsi' => $request['provinsi'],
+                            'kodepos' => $request['kodepos'],
+                            'nik_pemohon' => $request['nik_pemohon'],
+                            'tmpt_lahir' => $request['tmpt_lahir'],
+                            'tgl_datang' => $request['tgl_datang'],
+
+                            'tgl_lahir' => $request['tgl_lahir'],
+                            'nama' => $request['nama'],
+                            'tujuan_kk' => $request['tujuan_kk'],
+                            'tujuan_no_kk' => $request['tujuan_no_kk'],
+                            'tujuan_nama_kk' => $request['tujuan_nama_kk'],
+                            'tujuan_alamat' => $request['tujuan_alamat'],
+                            'tujuan_desa' => $request['tujuan_desa'],
+                            'tujuan_kecamatan' => $request['tujuan_kecamatan'],
+                            'tujuan_kabupaten' => $request['tujuan_kabupaten'],
+                            'tujuan_provinsi' => $request['tujuan_provinsi'], 
+                            'tujuan_kodepos' => $request['tujuan_kodepos'],                               
+                          ]);    
+                  $data = $request['data'];
+                  $jml = count($request->data['nik']);
+                  for ($i = 0; $i < $jml; $i++) {
+                    $keluarga = DB::table('keluarga_datang') 
+                            ->where('id', $data['id'][$i])
+                            ->update([
+                              'nik' => $data['nik'][$i],
+                              'nama' => $data['nama_kel'][$i],
+                              'masa_berlaku' => $data['masa_berlaku'][$i],  
+                              'shdk' => $data['shdk'][$i],                            
+                            ]); 
+                  } 
+              break;
+            //permohonan pindah datang
+            case ('7'):
+              $no_surat = '472.11/'.$request->id_pesanan;
+              $action = DB::table('data_permohonan_pindah_datang') 
+                         ->where('id', $request['id_data'])
+                        ->update([
+                          'no_kk' => $request['no_kk'],
+                          'nama_kk' => $request['nama_kk'],
+                          'alamat' => $request['alamat'],
+                          'desa' => $request['desa'],
+                          'kecamatan' => $request['kecamatan'],
+                          'kabupaten' => $request['kabupaten'],
+                          'provinsi' => $request['provinsi'],
+                          'kodepos' => $request['kodepos'],
+                          'nik_pemohon' => $request['nik_pemohon'],
+                          'tmpt_lahir' => $request['tmpt_lahir'],
+                          'tgl_datang' => $request['tgl_datang'],
+                          'tgl_lahir' => $request['tgl_lahir'],
+                          'nama' => $request['nama'],
+                          'tgl_datang'=>$request['tgl_datang'],
+                          'tujuan_kk' => $request['tujuan_kk'],
+                          'tujuan_no_kk' => $request['tujuan_no_kk'],
+                          'tujuan_nama_kk' => $request['tujuan_nama_kk'],
+                          'tujuan_alamat' => $request['tujuan_alamat'],
+                          'tujuan_desa' => $request['tujuan_desa'],
+                          'tujuan_kecamatan' => $request['tujuan_kecamatan'],
+                          'tujuan_kabupaten' => $request['tujuan_kabupaten'],
+                          'tujuan_provinsi' => $request['tujuan_provinsi'], 
+                          'tujuan_kodepos' => $request['tujuan_kodepos'],                               
+                        ]);    
+                  $data = $request['data'];
+                  $jml = count($request->data['nik']);
+                  for ($i = 0; $i < $jml; $i++) {
+                    $keluarga = DB::table('keluarga_perm_datang') 
+                            ->where('id', $data['id'][$i])
+                            ->update([
+                              'nik' => $data['nik'][$i],
+                              'nama' => $data['nama_kel'][$i],
+                              'masa_berlaku' => $data['masa_berlaku'][$i],  
+                              'shdk' => $data['shdk'][$i],                            
+                            ]); 
+                  }
+              break;
+          }
         $idpesan = $request->id_pesanan;
         $idpengaju = $request->id_pengaju;
         $pesanan = Pesanan::find($idpesan);
@@ -163,6 +461,7 @@ class HomeController extends Controller
         // dd('berhasil');
         $pesanan->update([
             'tanggal_verifikasi' => now(),
+            'nomer_surat' => $no_surat,
             'status' => 1,
         
             
@@ -288,21 +587,21 @@ class HomeController extends Controller
                 break;
             //pengantar datang
             case '6':
-                $kategori = DB::table('kategori_surats')
-                        ->join('data_pengajuans', 'kategori_surats.id','=','data_pengajuans.kategori_surat_id')
-                        ->where('data_pengajuans.id', $id)
-                        ->select('kategori_surats.*')
+                $nomor_surat = DB::table('pesanans')
+                        ->join('data_pengajuans', 'pesanans.data_pengajuan_id','=','data_pengajuans.id')
+                        ->where('pesanans.data_pengajuan_id', $id)
+                        ->select('pesanans.*')
                         ->first(); 
                 $pengajuan = DB::table('data_pengajuans')
                         ->join('data_surat_pindah_datang', 'data_pengajuans.data','=','data_surat_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_surat_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan','nomer_surat')
+                        ->select('data_surat_pindah_datang.*','data_surat_pindah_datang.id AS id_perm','nama_pemesan','nomer_surat')
                         ->first(); 
                  $data_kel = DB::table('keluarga_datang')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
                                 ->get();
-                $pdf = PDF::loadview('formpindahdatangwni', compact('pengajuan','kategori','data_kel'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('formpindahdatangwni', compact('pengajuan','nomor_surat','data_kel'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             //permohonan datang    
@@ -316,7 +615,7 @@ class HomeController extends Controller
                         ->join('data_permohonan_pindah_datang', 'data_pengajuans.data','=','data_permohonan_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_permohonan_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan','nomer_surat')
+                        ->select('data_permohonan_pindah_datang.*','data_permohonan_pindah_datang.id AS id_perm','nama_pemesan','nomer_surat')
                         ->first(); 
                  $data_kel = DB::table('keluarga_perm_datang')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
@@ -488,4 +787,21 @@ class HomeController extends Controller
         return redirect()->back()->with(['success' => 'DataDiambil']);
     }
     
+    public function reset(){
+
+        $pesanan = DB::tabel('pesanans')->truncate();
+        $pengajuan = DB::tabel('data_pengajuans')->truncate();
+        $kelahiran = DB::tabel('data_kelahiran')->truncate();
+        $kematin = DB::tabel('data_kematian')->truncate();
+        $pengpindah = DB::tabel('data_pengantar_pindah')->truncate();
+        $pengumum = DB::tabel('data_pengantar_umum')->truncate();
+        $pengpindahdatang = DB::tabel('data_pengantar_pindah_datang')->truncate();
+        $pengpsuratpindahdatang = DB::tabel('data_surat_pindah_datang')->truncate();
+        $pengpindahkel = DB::tabel('keluarga_datang')->truncate();
+        $pengpindahkel = DB::tabel('keluarga_pindah')->truncate();
+        $pengsuratpindahkel = DB::tabel('keluarga_perm_pindah')->truncate();
+
+
+
+    }
 }

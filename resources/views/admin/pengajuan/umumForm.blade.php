@@ -55,7 +55,7 @@
                     </div> 
                     <div class="form-group col-md-8">
                         <label for="inputState">Status Kawin</label>
-                        <select name="status" class="form-control">
+                        <select name="status_kawin" class="form-control">
                             <option selected>-- Status --</option>
                             <option value="kawin">Kawin</option>
                             <option value="belum kawin">Belum Kawin</option>

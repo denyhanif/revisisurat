@@ -83,6 +83,8 @@ class dataPengajuanController extends Controller
         switch ($kat) {
             //kelahiran
             case ('1'):
+                $no_surat = '472.11';
+
                 $data = DB::table('data_kelahiran') 
                             ->insert([
                               'no_kk' => $request['no_kk'],
@@ -138,6 +140,7 @@ class dataPengajuanController extends Controller
               break;
             //kematian
             case ('2'):
+              $no_surat = '472.11';
               $data = DB::table('data_kematian') 
                       ->insert([
                         'no_kk' => $request['no_kk'],
@@ -190,12 +193,14 @@ class dataPengajuanController extends Controller
                         'saksi2_umur' => $request['saksi2_umur'],
                         'saksi2_alamat' => $request['saksi2_alamat'],                              
                       ]);
-            $cek_id = DB::table('data_kematian')
-                        ->orderBy('id','desc')
-                        ->first();
+              $cek_id = DB::table('data_kematian')
+                          ->orderBy('id','desc')
+                          ->first();
               break;
             //pengantar umum
             case ('3'):
+                            $no_surat = '472.11';
+
               $data = DB::table('data_pengantar_umum') 
                         ->insert([
                           'nik' => $request['nik'],
@@ -205,7 +210,7 @@ class dataPengajuanController extends Controller
                           'tgl_lahir' => $request['tgl_lahir'],
                           'agama' => $request['agama'],
                           'pekerjaan' => $request['pekerjaan'],
-                          'status' => $request['status'],
+                          'status_kawin' => $request['status_kawin'],
                           'alamat' => $request['alamat'],
                           'tujuan' => $request['tujuan'],
                           'keperluan' => $request['keperluan'],                              
@@ -216,6 +221,8 @@ class dataPengajuanController extends Controller
               break;
             //pengantar pindah
             case ('4'):
+                            $no_surat = '472.11';
+
               $data = DB::table('data_pengantar_pindah') 
                         ->insert([
                           'nik' => $request['nik'],
@@ -241,6 +248,8 @@ class dataPengajuanController extends Controller
               break;
             //permohonan pindah
             case ('5'):
+                            $no_surat = '472.11';
+
               $db = DB::table('data_permohonan_pindah') 
                         ->insert([
                           'no_kk' => $request['no_kk'],
@@ -284,6 +293,8 @@ class dataPengajuanController extends Controller
               break;
             //pindah datang
             case ('6'):
+                            $no_surat = '472.11';
+
                   $db = DB::table('data_surat_pindah_datang') 
                           ->insert([
                             'no_kk' => $request['no_kk'],
@@ -328,6 +339,8 @@ class dataPengajuanController extends Controller
               break;
             //permohonan pindah datang
             case ('7'):
+                            $no_surat = '472.11';
+
               $db = DB::table('data_permohonan_pindah_datang') 
                         ->insert([
                           'no_kk' => $request['no_kk'],
@@ -386,11 +399,10 @@ class dataPengajuanController extends Controller
         $ids= $kategori->id;
         //dd($kode);
 
-        $nmrsurat =
 
         $pesanan = Pesanan::create([
             'data_pengajuan_id' => $pengajuan->id,
-            'nomer_surat' => 'nomor',
+            // 'nomer_surat' => $no_surat.'/'.$pengajuan->id,
             // $kode.'/ '.'Kec.Ngemplak'. '/'. $ids.' /' . tgl_romawi(Carbon::now()->format('m')).'/'. Carbon::now()->format('Y'),
             'tanggal_pesan' => now(),
         ]);
@@ -399,27 +411,6 @@ class dataPengajuanController extends Controller
         
 
 
-        // if($request->has('berkas'))
-        // {
-        //     $berkas = $request->berkas;
-        //     $new_berkas = time() . $berkas->getClientOriginalName();
-        //     $berkas->storeAs('public/berkaswarga', $new_berkas);
-
-        //     $pengajuan = DataPengajuan::create([
-        //         'kategori_surat_id' => $request->id_kategori,
-        //         'nama_pemesan' => $request->nama,
-        //         'jenis_kelamin' => $request->jenis_kelamin,
-        //         'tempat_lahir' => $request->tempat_lahir,
-        //         'tanggal_lahir' => $request->tanggal_lahir,
-        //         'nik' => $request->nik,
-        //         'alamat' => $request->alamat,
-        //         'pekerjaan' => $request->pekerjaan,
-        //         'status_perkawinan' => $request->status,
-        //         'agama' => $request->agama,
-        //         'berkas' => $new_berkas,
-        //     ]);
-        // }
-        
     }
 
     /**
@@ -511,5 +502,10 @@ class dataPengajuanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function updatelahir(Request $request, $id){
+      $pengajuan = DataPengajuan::find($id);
+
     }
 }

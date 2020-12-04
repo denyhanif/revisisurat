@@ -19,6 +19,8 @@
                 <th scope="col">Jenis Surat</th>
                 <th scope="col">Tanggal Jadi</th>
                 <th scope="col">Status</th>
+                <th> action </th>
+                
               </tr>
             </thead>
             
@@ -33,6 +35,7 @@
                   <td>{{ $row->kategori->nama }}</td>
                   <td>{{ $row->tanggal_jadi() }}</td>
                   <td>{!! $row->status_label !!}</td>
+                  <td>  <a class="btn btn-primary" href="{{ route('print.surat', $row->id) }}"></a> </td>
                 </tr>
                 @empty
                     <tr>

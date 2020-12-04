@@ -64,6 +64,8 @@ Route::group(['prefix' => 'Administrator', 'middleware' => 'auth'], function () 
 
     Route::get('/rekap-tahun', 'HomeController@rekapTahun')->name('rekap.tahun');
     Route::post('/rekap-data', 'HomeController@rekapdata')->name('rekap.data');
+    Route::get('/reset', 'HomeController@reset')->name('reset');
+
 
 
 });

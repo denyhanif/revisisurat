@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group col-md-6">
                         <label for="inputState">umur jenazah</label>
-                        <input class="form-control" type="text" name="umur" >
+                        <input class="form-control" type="number" name="umur" >
                         </div>
                         <div class="form-group col-md-6">
                         <label for="inputState">jam meninggal jenazah</label>

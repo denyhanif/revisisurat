@@ -10,7 +10,8 @@
     <div class="row">
         <div class="col-md-12 card shadow mb-4">
             <form class="mt-3 mb-2" action="{{ route('send.verifikasi') }}" method="POST" enctype="multipart/form-data">
-                @csrf                    
+                @csrf      
+                    <input hidden value="{{ $data->data_id }}" name="id_data" >               
                     <input hidden value="{{ $data->pengajuan_id }}" name="id_pengaju" >
                     <input hidden value="{{ $data->pesanan_id }}" name="id_pesanan" >
                     <input hidden value="{{ $data->halaman }}" name="kat" >
@@ -115,6 +116,36 @@
                         <label for="inputState">Kodepos</label>
                         <input class="form-control" type="text" name="tujuan_kodepos" value="{{ $data->tujuan_kodepos }}">
                     </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputState">Keluarga Yang Pindah</label>
+                    </div>
+                    <div class="form-group col-md-12">
+                        @foreach ($data_kel as $item)
+                            <div class="form-group row">
+                            <div class="row col-auto" style="flex: 1 1 1px;">
+                                <div class="col-3">
+                                    <input type="text" hidden name="data[id][]" required value="{{ $item->id }}">
+                                    <label>NIK</label>
+                                    <input type="text" class="form-control" name="data[nik][]" required value="{{ $item->nik }}">    
+                                </div>
+                                <div class="col-4">
+                                    <label>Nama</label>
+                                    <input type="text" class="form-control" name="data[nama_kel][]" required  value="{{ $item->nama }}">    
+                                </div>
+                                <div class="col-3">
+                                    <label>Masa Berlaku KTP</label>
+                                    <input type="text" class="form-control" name="data[masa_berlaku][]" value="{{ $item->masa_berlaku }}">    
+                                </div>
+                                <div class="col-2">
+                                    <label>SHDK</label>
+                                    <input type="text" class="form-control" name="data[shdk][]" required value="{{ $item->shdk }}">    
+                                </div>
+                            </div>
+                            </div>
+                        @endforeach
+                        
+                    </div>
+                    <hr>
                     <div class="text-left mt-4 mb-4">
                         <button type="submit" class="btn btn-primary">Verifikasi</button>
                     </div>

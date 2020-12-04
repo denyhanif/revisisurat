@@ -11,6 +11,7 @@
         <div class="col-md-12 card shadow mb-4">
             <form class="mt-3 mb-2" action="{{ route('send.verifikasi') }}" method="POST" enctype="multipart/form-data">
                 @csrf                    
+                    <input hidden value="{{ $data->data_id }}" name="id_data" > 
                     <input hidden value="{{ $data->pengajuan_id }}" name="id_pengaju" >
                     <input hidden value="{{ $data->pesanan_id }}" name="id_pesanan" >
                     <input hidden value="{{ $data->halaman }}" name="kat" >

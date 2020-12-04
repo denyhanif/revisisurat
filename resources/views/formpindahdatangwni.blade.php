@@ -265,7 +265,7 @@
         <tr style="border: 1px solid black">
             <td style="border: 1px solid black"></td>
             <td style="border: 1px solid black">{{ $item->nik }}</td>
-            <td style="border: 1px solid black">{{ $item->nama}}</td>
+            <td style="border: 1px solid black">{{ $item->nama }}</td>
             <td style="border: 1px solid black">{{ $item->masa_berlaku }}</td>
             <td style="border: 1px solid black">{{ $item->shdk }}</td>
         </tr>

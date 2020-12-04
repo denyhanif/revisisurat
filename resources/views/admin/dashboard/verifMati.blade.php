@@ -10,13 +10,14 @@
     <div class="row">
         <div class="col-md-12 card shadow mb-4">
             <form class="mt-3 mb-2" action="{{ route('send.verifikasi') }}" method="POST" enctype="multipart/form-data">
-                @csrf                    
+                @csrf        
+                    <input hidden value="{{ $data->data_id }}" name="id_data" >             
                     <input hidden value="{{ $data->pengajuan_id }}" name="id_pengaju" >
                     <input hidden value="{{ $data->pesanan_id }}" name="id_pesanan" >
                     <input hidden value="{{ $data->halaman }}" name="kat" >
                     <div class="form-group col-md-6">
                         <label for="inputState">Nama Pemesan Surat</label>
-                        <input class="form-control" type="text" name="nama_pemesan" value="{{ $data->nama_pemesan }}">
+                        <input class="form-control" type="text" name="nama_pemesan" readonly value="{{ $data->nama_pemesan }}">
                     </div>    
                     <div class="form-group col-md-6">
                         <label for="inputState">Nomor Kartu Keluarga</label>
