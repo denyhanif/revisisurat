@@ -43,7 +43,7 @@
         <td style="margin: 0;padding:0" align="center"><u><b>SURAT KETERANGAN KELAHIRAN</b> </u></td>
     </tr>
     <tr style="margin: 0;padding:0">
-        <td style="margin: 0;padding:0; font-size:10px"><center>Nomer Surat  </center></td>
+        <td style="margin: 0;padding:0; font-size:10px"><center>{{  $pengajuan->nomer_surat  }}  </center></td>
     </tr>
 </table>
 

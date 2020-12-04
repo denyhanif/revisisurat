@@ -513,7 +513,8 @@ class HomeController extends Controller
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
                         ->select('data_kelahiran.*','nama_pemesan','nomer_surat')
-                        ->first(); 
+                        ->first();
+                // $nomor = DB::table('pesanans')->where('data_pengjuan.id',$id)->select('nomor_surat'); 
                 $pdf = PDF::loadview('suratkelahiran', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;

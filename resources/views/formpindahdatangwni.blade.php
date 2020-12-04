@@ -141,7 +141,7 @@
                 </td>
             </tr>
             <tr><td><center><b><font size="1">Antar Kecamatan Dalam Satu Kabupaten / Kota </font></b></center></td></tr>
-            <tr><td><center><font size="1">No. 471.21/./ 330</font></center></td></tr>
+            <tr><td><center><font size="1">No. {{ $pengajuan->nomer_surat }}</font></center></td></tr>
         </table>
     
     <table style="margin-top: 10px;margin-bottom:10px">
@@ -263,7 +263,10 @@
         </tr>
         @foreach ($data_kel as $item)
         <tr style="border: 1px solid black">
-            <td style="border: 1px solid black"></td>
+            @php
+                    $no = 1;
+                @endphp
+            <td style="border: 1px solid black">{{ $no++ }}</td>
             <td style="border: 1px solid black">{{ $item->nik }}</td>
             <td style="border: 1px solid black">{{ $item->nama }}</td>
             <td style="border: 1px solid black">{{ $item->masa_berlaku }}</td>

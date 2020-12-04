@@ -42,7 +42,7 @@
                 </td>
             </tr>
             <tr><td><center><b>ANTAR KABUPATEN / KOTA ATAU ANTAR PROVINSI</b></center></td></tr>
-            <tr><td><center>No.</center></td></tr>
+            <tr><td><center>No.{{ $pengajuan->nomer_surat }}</center></td></tr>
         </table>
     
         <table style="margin-top:20px">

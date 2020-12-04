@@ -55,7 +55,11 @@
                         <div class="form-group col-md-6">
                             <label for="inputState">Tanggal Lahir</label>
                             <input class="form-control" type="text" name="tgl_lahir" value="{{ $data->tgl_lahir }}">
-                        </div>      
+                        </div>    
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Umur jenazah</label>
+                            <input class="form-control" type="text" name="umur" value="{{ $data->umur }}">
+                        </div>   
                         <div class="form-group col-md-6">
                             <label for="inputState">Agama</label>
                             <select name="agama" class="form-control">
@@ -89,10 +93,18 @@
                         <div class="form-group col-md-6">
                             <label for="inputState">Anak Ke</label>
                             <input class="form-control" type="text" name="anak_ke" value="{{ $data->anak_ke }}">
-                        </div>  
+                        </div> 
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Hari Meninggal </label>
+                            <input class="form-control" type="text" name="hari_meninggal" value="{{ $data->hari_meninggal }}">
+                        </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Meninggal Tanggal</label>
                             <input class="form-control" type="date" name="meninggal_tgl" value="{{ $data->meninggal_tgl }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Meninggal jam</label>
+                            <input class="form-control" type="text" name="jam_meninggal" value="{{ $data->jam_meninggal }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputState">Tempat Meninggal</label>
@@ -121,7 +133,7 @@
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Nama Lengkap</label>
-                            <input class="form-control" type="text" name="ibu_nm" value="{{ $data->ibu_nama }}">
+                            <input class="form-control" type="text" name="ibu_nama" value="{{ $data->ibu_nama }}">
                         </div>  
                         <div class="form-group col-md-6">
                             <label for="inputState">Tempat Lahir</label>
@@ -137,11 +149,11 @@
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Alamat</label>
-                            <input class="form-control" type="text" name="ibu_almt" value="{{ $data->ibu_alamat }}">
+                            <input class="form-control" type="text" name="ibu_alamat" value="{{ $data->ibu_alamat }}">
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Kewarganegaraan</label>
-                            <input class="form-control" type="text" name="ibu_warganegara" value="{{ $data->ibu_kewarganegaraan }}">
+                            <input class="form-control" type="text" name="ibu_kewarganegaraan" value="{{ $data->ibu_kewarganegaraan }}">
                         </div>
                     </div>
                      
@@ -154,7 +166,7 @@
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Nama Lengkap</label>
-                            <input class="form-control" type="text" name="ayah_nm" value="{{ $data->ayah_nama }}">
+                            <input class="form-control" type="text" name="ayah_nama" value="{{ $data->ayah_nama }}">
                         </div>  
                         <div class="form-group col-md-6">
                             <label for="inputState">Tempat Lahir</label>
@@ -170,11 +182,11 @@
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Alamat</label>
-                            <input class="form-control" type="text" name="ayah_almt" value="{{ $data->ayah_alamat }}">
+                            <input class="form-control" type="text" name="ayah_alamat" value="{{ $data->ayah_alamat }}">
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Kewarganegaraan</label>
-                            <input class="form-control" type="text" name="ayah_warganegara" value="{{ $data->ayah_kewarganegaraan }}">
+                            <input class="form-control" type="text" name="ayah_kewarganegaraan" value="{{ $data->ayah_kewarganegaraan }}">
                         </div>
                     </div>
                      
@@ -187,7 +199,7 @@
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Nama Lengkap</label>
-                            <input class="form-control" type="text" name="pelapor_nm" value="{{ $data->pelapor_nama }}">
+                            <input class="form-control" type="text" name="pelapor_nama" value="{{ $data->pelapor_nama }}">
                         </div>  
                         <div class="form-group col-md-6">
                             <label for="inputState">Tempat Lahir</label>
@@ -207,7 +219,7 @@
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Alamat</label>
-                            <input class="form-control" type="text" name="pelapor_almt" value="{{ $data->pelapor_alamat }}">
+                            <input class="form-control" type="text" name="pelapor_alamat" value="{{ $data->pelapor_alamat }}">
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Tanggal Lapor</label>

@@ -141,14 +141,14 @@
                 </td>
             </tr>
             <tr><td><center><b><font size="1">Antar Kabupaten / kota atau Provinsi</font></b></center></td></tr>
-            <tr><td><center><font size="1">No.</font></center></td></tr>
+            <tr><td><center><font size="1">No. {{ $pengajuan->nomer_surat }}</font></center></td></tr>
         </table>
     
     <table style="margin-top: 10px;margin-bottom:10px">
         <tr><font size="3"> <b>DATA DAERAH ASAL</b> </font></tr>
     </table>
-    <table style="font-size: 12px">
-        <tr>
+    <table style="font-size: 12px;padding:5px">
+        <tr style="padding: 2px" >
             <td style="width: 200px">1.Nomor Kartu Keluarga</td>
             <td >:{{ $pengajuan->no_kk }}</td>
         </tr>
@@ -203,7 +203,7 @@
     <table style="margin-top: 10px">
         <tr><td> <b>DATA DAERAH KEPINDAHAN</b></td> </tr>
     </table>
-    <table style=" font-size:12px">
+    <table style=" font-size:12px;padding:5px">
         <tr>
             <td style="width: 200px">1.Alasan Pindah</td>
             <td id="data">:{{ $pengajuan->alasan_pindah }}</td>
@@ -264,7 +264,10 @@
         </tr>
         @foreach ($data_kel as $item)
         <tr style="border: 1px solid black">
-            <td style="border: 1px solid black"></td>
+            @php
+                    $no = 1;
+                @endphp
+            <td style="border: 1px solid black">{{ $no++ }}</td>
             <td style="border: 1px solid black">{{ $item->nik }}</td>
             <td style="border: 1px solid black">{{ $item->nama}}</td>
             <td style="border: 1px solid black">{{ $item->masa_berlaku }}</td>

@@ -56,7 +56,7 @@
                         <b><font size="2">SURAT KETERANGAN </font> </b> 
                 </td>
             </tr>
-            <tr align="center"><td>Nomor:</td></tr>
+            <tr align="center"><td>Nomor: {{ $pengajuan->nomer_surat }}</td></tr>
         </table>
     
     <table style="margin-top: 10px;margin-bottom:10px">

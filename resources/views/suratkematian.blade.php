@@ -43,7 +43,7 @@
         <td style="margin: 0;padding:0" align="center"><u><b>SURAT KETERANGAN KEMATIAN</b> </u></td>
     </tr>
     <tr style="margin: 0;padding:0">
-        <td style="margin: 0;padding:0"><center>Nomer Surat  </center></td>
+        <td style="margin: 0;padding:0; font-size:10px;"><center>{{ $pengajuan->nomer_surat }}  </center></td>
     </tr>
 </table>
 
@@ -84,7 +84,7 @@
             </tr>
             <tr>
                 <td>5. Tanggal Lahir/Umur</td>
-                <td>:{{ $pengajuan->tgl_lahir }} / {{ $pengajuan->umur }} </td>
+                <td>:{{ $pengajuan->tgl_lahir }} / {{ $pengajuan->umur}} Tahun</td>
             </tr>
             <tr>
                 <td>6. Agama</td>
@@ -303,42 +303,25 @@
     
 
 
-    <table width="200%" style="font-size: 11px;margin">
+    
+
+
+    <table width="100%" style="font-size: 11px" align="left">
         <tr>
             <td> <center>Mengetahui</center></td>
-            <td >umbulmartani,{{ tgl_indo(Carbon\Carbon::parse(now())->format('Y-m-d')) }}</td>
+            <td style=""> <center> umbulmartani,{{ tgl_indo(Carbon\Carbon::parse(now())->format('Y-m-d')) }} </center></td>
+        </tr>
+        <tr>
+            <td> <center>  a.n Kepala Desa Umbulmartani</center></td>
+            <td > <center> pelapor</center> </td>
+        </tr>
+        <tr style="margin-top: 10px">
+            <td> <center>rahmat edi</center> </td>
+           
+            <td> <center>sugio</center></td>
         </tr>
         
     </table>
-
-
-    <table align="left" border="" style="font-size:11px; ;margin-top:0px;padding-top:0px; ">
-    <tr><td height=""></td></tr>
-    <tr style="">
-        <td> <center> Mengetahui</center> </td>
-    </tr>
-    <tr style="">
-        <td> <font style="size: 10px">a.n KEPALA DESA UMBULMARTANI</font> </td>
-    </tr>
-    <tr ><td height="50"></td></tr>
-    <tr align="center">
-        <td><b>sUGIO</b></td>
-    </tr>
-   <table align="right" border="" style="margin_left:450px ">
-    <tr><td height=""></td></tr>
-    <tr style="">
-        <td>Umbulmartani, {{ tgl_indo(Carbon\Carbon::parse(now())->format('Y-m-d')) }} </td>
-    </tr>
-    <tr align="center">
-        <td>pelapor</td>
-    </tr>
-    <tr ><td height="50"></td></tr>
-    <tr align="center">
-        <td><b>Rahmat edi</b></td>
-    </tr>
-
-</table>
-
 
     
 </body>
