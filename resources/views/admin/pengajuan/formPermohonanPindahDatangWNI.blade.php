@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
-        <h1 class="h3 mb-0 text-gray-800">Formulir Permohonan Pindah</h1>
+        <h1 class="h3 mb-0 text-gray-800">Formulir Permohonan Pindah Datang WNI</h1>
     </div>
 
     <div class="row">
@@ -40,7 +40,7 @@
                     </div>    
                     <div class="form-group col-md-8">
                         <label for="inputState">Kab / Kota</label>
-                        <input class="form-control" type="text" name="kab" >
+                        <input class="form-control" type="text" name="kabupaten" >
                     </div>         
                     <div class="form-group col-md-8">
                         <label for="inputState">Provinsi</label>
@@ -56,7 +56,7 @@
                     </div>  
                     <div class="form-group col-md-8">
                         <label for="inputState">Tempat Lahir</label>
-                        <input class="form-control" type="text" name="tempat_lahir" >
+                        <input class="form-control" type="text" name="tmpt_lahir" >
                     </div>  
                     <div class="form-group col-md-8">
                         <label for="inputState">Tanggal Lahir</label>
@@ -67,23 +67,31 @@
                         <input class="form-control" type="text" name="nama" >
                     </div>
                     <hr/>
-                    <h1 class="h3 mb-0 text-gray-800">Data Kepindahan</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Data Daerah Tujuan</h1>
                     <div class="form-group col-md-8">
-                        <label for="inputState">Alasan Pindah</label>
-                        <select name="alasan_pindah" class="form-control">
+                        <label for="inputState">Status KK</label>
+                        <select name="tujuan_kk" class="form-control">
                             <option selected>-- Pilih --</option>
-                            <option value="Pekerjaan">Pekerjaan</option>
-                            <option value="Pendidikan">Pendidikan</option>
-                            <option value="Keamanan">Keamanan</option>
-                            <option value="Kesehatan">Kesehatan</option>
-                            <option value="Perumahan">Perumahan</option>
-                            <option value="Keluarga">Keluarga</option>
-                            <option value="Lainnya">Lainnya</option>
+                            <option value="Numpang">Numpang</option>
+                            <option value="Membuat KK Baru">Membuat Kk Baru</option>
+                            <option value="Nomor KK Tetap">Nomor KK Tetap</option>
                         </select>
                     </div> 
                     <div class="form-group col-md-8">
-                        <label for="inputState">Alamat Tujuan Pindah</label>
-                        <input class="form-control" type="text" name="tujuan_alamat_pindah" >
+                        <label for="inputState">Nomor Kartu Keluarga</label>
+                        <input class="form-control" type="text" name="tujuan_no_kk" >
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputState">Nama Kepala Keluarga</label>
+                        <input class="form-control" type="text" name="tujuan_nama_kk" >
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputState">Tanggal Kedatangan</label>
+                        <input class="form-control" type="text" name="tgl_datang" >
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputState">Alamat yang Dituju</label>
+                        <input class="form-control" type="text" name="tujuan_alamat" >
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Desa / Kelurahan</label>
@@ -94,44 +102,16 @@
                         <input class="form-control" type="text" name="tujuan_kecamatan" >
                     </div>
                     <div class="form-group col-md-8">
-                        <label for="inputState">Kab / Kota</label>
-                        <input class="form-control" type="text" name="tujuan_kab" >
+                        <label for="inputState">Kabupaten</label>
+                        <input class="form-control" type="text" name="tujuan_kabupaten" >
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Provinsi</label>
-                        <input class="form-control" type="text" name="tujuan_prov" >
+                        <input class="form-control" type="text" name="tujuan_provinsi" >
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Kodepos</label>
                         <input class="form-control" type="text" name="tujuan_kodepos" >
-                    </div>
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Jenis Kepindahan</label>
-                        <select name="jenis_pindah" class="form-control">
-                            <option selected>-- Pilih --</option>
-                            <option value="Kep. Keluarga">Kep. Keluarga</option>
-                            <option value="Kep. Keluarga dan Seluruh Anggota Keluarga">Kep. Keluarga dan Seluruh Anggota Keluarga</option>
-                            <option value="Kep. Keluarga Sebagai Anggota Keluarga">Kep. Keluarga Sebagai Anggota Keluarga</option>
-                            <option value="Anggota Keluarga">Anggota Keluarga</option>
-                        </select>
-                    </div> 
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Status KK bagi yang tidak pindah</label>
-                        <select name="status_kk" class="form-control">
-                            <option selected>-- Pilih --</option>
-                            <option value="Numpang KK">Numpang KK</option>
-                            <option value="Membuat KK Baru">Membuat KK Baru</option>
-                            <option value="Nomor KK Tetap">Nomor KK Tetap</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Status KK bagi yang pindah</label>
-                        <select name="status_no_kk_pindah" class="form-control">
-                            <option selected>-- Pilih --</option>
-                            <option value="Numpang KK">Numpang KK</option>
-                            <option value="Membuat KK Baru">Membuat KK Baru</option>
-                            <option value="Nomor KK Tetap">Nomor KK Tetap</option>
-                        </select>
                     </div>
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Keluarga yang Pindah</h1>

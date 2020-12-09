@@ -117,19 +117,20 @@
                         <input class="form-control" type="text" name="tujuan_kodepos" value="{{ $data->tujuan_kodepos }}">
                     </div>
                     <div class="form-group col-md-8">
-                        <label for="inputState">keluarga yang pindah</label>
+                        <label for="inputState">keluarga yang pincdah</label>
                     </div>
                     <div class="form-group col-md-12">
                         @foreach ($data_kel as $item)
                             <div class="form-group row">
                             <div class="row col-auto" style="flex: 1 1 1px;">
                                 <div class="col-3">
+                                    <input type="text" hidden name="data[id][]" required value="{{ $item->id }}">
                                     <label>NIK</label>
                                     <input type="text" class="form-control" name="data[nik][]" required value="{{ $item->nik }}">    
                                 </div>
                                 <div class="col-4">
                                     <label>Nama</label>
-                                    <input type="text" class="form-control" name="data[nama][]" required  value="{{ $item->nama }}">    
+                                    <input type="text" class="form-control" name="data[nama_kel][]" required  value="{{ $item->nama }}">    
                                 </div>
                                 <div class="col-3">
                                     <label>Masa Berlaku KTP</label>

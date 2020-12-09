@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
-        <h1 class="h3 mb-0 text-gray-800">Verifikasi Formulir Permohonan Pindahh</h1>
+        <h1 class="h3 mb-0 text-gray-800">Verifikasi Formulir Permohonan Pindah WNI</h1>
     </div>
 
     <div class="row">
@@ -81,7 +81,7 @@
                         <div class="form-group col-md-8">
                         <label for="inputState">Alasan Pindah</label>
                         <select name="alasan_pindah" class="form-control" >
-                            <option selected value="">{{ $data->alasan_pindah }}</option>
+                            <option selected >{{ $data->alasan_pindah }}</option>
                             <option value="Pekerjaan">Pekerjaan</option>
                             <option value="Pendidikan">Pendidikan</option>
                             <option value="Keamanan">Keamanan</option>
@@ -127,8 +127,8 @@
                     </div> 
                     <div class="form-group col-md-6">
                         <label for="inputState">Status KK bagi yang tidak pindah</label>
-                        <select name="status_kk" class="form-control">
-                            <option selected >{{ $data->status_kk }}</option>
+                        <select name="tujuan_kk" class="form-control">
+                            <option selected >{{ $data->tujuan_kk }}</option>
                             <option value="Numpang KK">Numpang KK</option>
                             <option value="Membuat KK Baru">Membuat KK Baru</option>
                             <option value="Nomor KK Tetap">Nomor KK Tetap</option>

@@ -32,11 +32,9 @@
                     <div class="form-group col-md-8">
                         <label for="inputState">Jenis Kelamin</label>
                         <select name="jk" class="form-control">
-                            @if ( $data->jk == "L")
+                            <option selected >{{$data->jk }}</option>
                             <option value="L">Laki - Laki</option>
-                            @else
-                            <option value="P">perempuan</option>
-                            @endif
+                            <option value="P">Perempuan</option>
                         </select>
                     </div> 
                     <div class="form-group col-md-8">
@@ -62,7 +60,7 @@
                     </div>        
                     <div class="form-group col-md-8">
                         <label for="inputState">Status Kawin</label>
-                        <select name="status" class="form-control">
+                        <select name="status_kawin" class="form-control">
                             <option selected> {{ $data->status_kawin }}</option>
                             <option value="kawin">kawin</option>
                             <option value="belum kawin"> belum kawin</option>

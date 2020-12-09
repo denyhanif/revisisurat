@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
-        <h1 class="h3 mb-0 text-gray-800">Formulir Permohonan Pindah Datang</h1>
+        <h1 class="h3 mb-0 text-gray-800">Formulir Permohonan Pindah Datang WNI</h1>
     </div>
 
     <div class="row">
@@ -43,7 +43,7 @@
                     </div>    
                     <div class="form-group col-md-8">
                         <label for="inputState">Kab / Kota</label>
-                        <input class="form-control" type="text" name="kab" value="{{ $data->kabupaten }}">
+                        <input class="form-control" type="text" name="kabupaten" value="{{ $data->kabupaten }}">
                     </div>         
                     <div class="form-group col-md-8">
                         <label for="inputState">Provinsi</label>
@@ -59,7 +59,7 @@
                     </div>  
                     <div class="form-group col-md-8">
                         <label for="inputState">Tempat Lahir</label>
-                        <input class="form-control" type="text" name="tempat_lahir" value="{{ $data->tmpt_lahir }}">
+                        <input class="form-control" type="text" name="tmpt_lahir" value="{{ $data->tmpt_lahir }}">
                     </div>  
                     <div class="form-group col-md-8">
                         <label for="inputState">Tanggal Lahir</label>
@@ -74,7 +74,7 @@
                     <div class="form-group col-md-8">
                         <label for="inputState">Status KK</label>
                         <select name="tujuan_kk" class="form-control">
-                            <option selected>-- Pilih --</option>
+                            <option selected>{{ $data->tujuan_kk }}</option>
                             <option value="Numpang">Numpang</option>
                             <option value="Membuat KK Baru">Membuat Kk Baru</option>
                             <option value="Nomor KK Tetap">Nomor KK Tetap</option>

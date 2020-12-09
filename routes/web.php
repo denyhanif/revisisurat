@@ -43,8 +43,8 @@ Route::group(['prefix' => 'Administrator', 'middleware' => 'auth'], function () 
     Route::get('/verifikasi-umum/{id}', 'HomeController@verifUmum')->name('verifikasi-umum');
     Route::get('/verifikasi-pengantar-pindah/{id}', 'HomeController@verifPengantarPindah')->name('verifikasi-pindah');
     Route::get('/verifikasi-permohonan-pindah/{id}', 'HomeController@verifPermohonanPindah')->name('verifikasi-permohonan-pindah');
-    Route::get('/verifikasi-pengantar-datang/{id}', 'HomeController@verifPengantarDatang')->name('verifikasi-datang');
-    Route::get('/verifikasi-permohonan-datang/{id}', 'HomeController@verifPermohonanDatang')->name('verifikasi-permohonan-datang');
+    Route::get('/verifikasi-pengantar-datang/{id}', 'HomeController@verifSuratPindahDatangWNI')->name('verifikasi-datang');
+    Route::get('/verifikasi-permohonan-pindah-datang-WNI/{id}', 'HomeController@verifPermohonanDatang')->name('verifikasi-permohonan-datang');
 
     Route::get('/list-kategori/data/{pesanan}', 'HomeController@listdatakategori')->name('list.kategori.data');
     Route::get('/cekpesanan','HomeController@cekPesanan')->name('cek.pesanan');

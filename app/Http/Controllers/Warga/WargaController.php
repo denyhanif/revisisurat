@@ -57,7 +57,7 @@ class WargaController extends Controller
                 return view('warga.form.datangForm',compact('kategori'));
               break;
             case ('7'):
-                return view('warga.form.formdatangForm',compact('kategori'));
+                return view('warga.form.formPermohonanPindahDatangWNI',compact('kategori'));
               break;
           }   
     }
@@ -192,7 +192,7 @@ class WargaController extends Controller
                           'tgl_lahir' => $request['tgl_lahir'],
                           'agama' => $request['agama'],
                           'pekerjaan' => $request['pekerjaan'],
-                          'status_kawin' => $request['status'],
+                          'status_kawin' => $request['status_kawin'],
                           'alamat' => $request['alamat'],
                           'tujuan' => $request['tujuan'],
                           'keperluan' => $request['keperluan'],                              

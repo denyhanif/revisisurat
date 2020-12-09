@@ -17,11 +17,11 @@
                             <option selected>-- Pilih Kategori --</option>
                             <option value="1">Surat Keterangan Kelahiran</option>
                             <option value="2">Surat Keterangan Kematian</option>
-                            <option value="3">Surat Pengantar Umum</option>
+                            <option value="3">Surat keterangan </option>
                             <option value="4">Surat Pengantar Pindah</option>
-                            <option value="5">Formulir Permohonan Pindah</option>
+                            <option value="5">Formulir Permohonan Pindah WNI</option>
                             <option value="6">Surat Keterangan Pindah Datang</option>
-                            <option value="7">Formulir Permohonan Pindah Datang</option>
+                            <option value="7">Formulir Permohonan Pindah Datang WNI</option>
                         </select>
                     </div>
                     

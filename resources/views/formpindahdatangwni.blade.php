@@ -206,7 +206,7 @@
     <table style=" font-size:12px">
         <tr>
             <td style="width: 200px">1.Status KK bagi yang pindah</td>
-            <td id="data">:</td>
+            <td id="data">:{{ $pengajuan->tujuan_kk }}</td>
         </tr>
         <tr>
             <td>2.Nomor Kartu Keluarga</td>

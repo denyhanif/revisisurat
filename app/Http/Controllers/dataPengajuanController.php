@@ -58,13 +58,13 @@ class dataPengajuanController extends Controller
                 return view('admin.pengajuan.pindahForm',compact('kategori'));
               break;
             case ('5'):
-                return view('admin.pengajuan.formpindahForm',compact('kategori'));
+                return view('admin.pengajuan.formPermohonanPindahWNI',compact('kategori'));
               break;
             case ('6'):
                 return view('admin.pengajuan.datangForm',compact('kategori'));
               break;
             case ('7'):
-                return view('admin.pengajuan.formdatangForm',compact('kategori'));
+                return view('admin.pengajuan.formPermohonanPindahDatangWNI',compact('kategori'));
               break;
           }
         

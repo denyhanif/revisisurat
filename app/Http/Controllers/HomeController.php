@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use PDF;
 use Illuminate\Support\Facades\View;
+use Carbon\Carbon;
 
 
 class HomeController extends Controller
@@ -109,10 +110,11 @@ class HomeController extends Controller
         $data_kel = DB::table('keluarga_pindah')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
                                 ->get();                              
-        return view('admin.dashboard.verifPermohonanPindah', compact('data','data_kel'));
+        return view('admin.dashboard.verifPermohonanPindahwni', compact('data','data_kel'));
     }
-    public function verifPengantarDatang($id)
-    {
+    
+    public function verifSuratPindahDatangWNI($id)
+    {//6
         $data = DB::table('data_pengajuans')
                         ->join('data_surat_pindah_datang', 'data_pengajuans.data','=','data_surat_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
@@ -123,15 +125,15 @@ class HomeController extends Controller
                         ->join('data_surat_pindah_datang', 'data_pengajuans.data','=','data_surat_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_surat_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan')
+                        ->select('data_surat_pindah_datang.*','data_surat_pindah_datang.id AS id_perm','nama_pemesan','nomer_surat')
                         ->first(); 
         $data_kel = DB::table('keluarga_datang')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
                                 ->get();              
-        return view('admin.dashboard.verifDatang', compact('data','data_kel'));
+        return view('admin.dashboard.verifSuratPindahDatangWNI', compact('data','data_kel'));
     }
     public function verifPermohonanDatang($id)
-    {
+    {//7 
         $data = DB::table('data_pengajuans')
                         ->join('data_permohonan_pindah_datang', 'data_pengajuans.data','=','data_permohonan_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
@@ -139,12 +141,12 @@ class HomeController extends Controller
                         ->select('data_permohonan_pindah_datang.*','data_permohonan_pindah_datang.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
                         ->first(); 
 
-        $pengajuan = DB::table('data_pengajuans')
+         $pengajuan = DB::table('data_pengajuans')
                         ->join('data_permohonan_pindah_datang', 'data_pengajuans.data','=','data_permohonan_pindah_datang.id')
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
-                        ->select('data_permohonan_pindah_datang.*','data_pengajuans.id AS id_perm','nama_pemesan')
-                        ->first();
+                        ->select('data_permohonan_pindah_datang.*','data_permohonan_pindah_datang.id AS id_perm','nama_pemesan','nomer_surat')
+                        ->first(); 
 
         $data_kel = DB::table('keluarga_perm_datang')
                 ->where('id_perm_pindah',$pengajuan->id_perm)
@@ -167,7 +169,7 @@ class HomeController extends Controller
         switch ($kat) {
             //kelahiran
             case ('1'):
-                 $no_surat = '472.11/'.$request->id_pesanan;
+                 $no_surat = '472.11/'.$request->id_pesanan.'/'.'Umbulmartani//'.tgl_romawi(Carbon::now()->format('m')).'/'.Carbon::now()->format('Y');//tgl_romawi(Carbon::now()->format('m')).'/'. 
                 $update = DB::table('data_kelahiran') 
                             ->where('id', $request['id_data'])
                             ->update([
@@ -278,7 +280,7 @@ class HomeController extends Controller
               break;
             //pengantar umum
             case ('3'):
-                 $no_surat = '472.11/'.$request->id_pesanan;
+                 $no_surat ='10/'.$request->id_pesanan.'/'.'Umbulmartani/'.tgl_romawi(Carbon::now()->format('m')).'/'.Carbon::now()->format('Y');//tgl_romawi(Carbon::now()->format('m')).'/'. 
               $action = DB::table('data_pengantar_umum') 
                         ->where('id', $request['id_data'])
                         ->update([
@@ -289,7 +291,7 @@ class HomeController extends Controller
                           'tgl_lahir' => $request['tgl_lahir'],
                           'agama' => $request['agama'],
                           'pekerjaan' => $request['pekerjaan'],
-                          'status' => $request['status'],
+                          'status_kawin' => $request['status_kawin'],
                           'alamat' => $request['alamat'],
                           'tujuan' => $request['tujuan'],
                           'keperluan' => $request['keperluan'],                              
@@ -297,7 +299,7 @@ class HomeController extends Controller
               break;
             //pengantar pindah
             case ('4'):
-                 $no_surat = '472.11/'.$request->id_pesanan;
+                 $no_surat = $request->id_pesanan.'/'.'Umbulmartani/'.tgl_romawi(Carbon::now()->format('m')).'/'.Carbon::now()->format('Y');//tgl_romawi(Carbon::now()->format('m')).'/'. 
               $data = DB::table('data_pengantar_pindah') 
                         ->where('id', $request['id_data'])
                         ->update([
@@ -322,13 +324,14 @@ class HomeController extends Controller
               break;
             //permohonan pindah
             case ('5'):
-                 $no_surat = '472.11/'.$request->id_pesanan;
+                $no_surat = '471.21/'.$request->id_pesanan.'/'.'Umbulmartani/'.tgl_romawi(Carbon::now()->format('m')).'/'.Carbon::now()->format('Y');//tgl_romawi(Carbon::now()->format('m')).'/'. 
               $db = DB::table('data_permohonan_pindah') 
                         ->where('id', $request['id_data'])
                         ->update([
                           'no_kk' => $request['no_kk'],
                           'nama_kk' => $request['nama_kk'],
                           'alamat' => $request['alamat'],
+                        'alasan_pindah'=>$request['alasan_pindah'],
                           'desa' => $request['desa'],
                           'kecamatan' => $request['kecamatan'],
                           'kab' => $request['kab'],
@@ -364,7 +367,7 @@ class HomeController extends Controller
               break;
             //pindah datang
             case ('6'):
-                 $no_surat = '472.11/'.$request->id_pesanan;;
+                 $no_surat ='471.21/'.$request->id_pesanan.'/'.'Umbulmartani/'.tgl_romawi(Carbon::now()->format('m')).'/'.Carbon::now()->format('Y');//tgl_romawi(Carbon::now()->format('m')).'/'. 
                   $db = DB::table('data_surat_pindah_datang') 
                           ->where('id', $request['id_data'])
                           ->update([
@@ -379,7 +382,6 @@ class HomeController extends Controller
                             'nik_pemohon' => $request['nik_pemohon'],
                             'tmpt_lahir' => $request['tmpt_lahir'],
                             'tgl_datang' => $request['tgl_datang'],
-
                             'tgl_lahir' => $request['tgl_lahir'],
                             'nama' => $request['nama'],
                             'tujuan_kk' => $request['tujuan_kk'],
@@ -407,7 +409,7 @@ class HomeController extends Controller
               break;
             //permohonan pindah datang
             case ('7'):
-              $no_surat = '472.11/'.$request->id_pesanan;
+              $no_surat = '472.21/'.$request->id_pesanan;
               $action = DB::table('data_permohonan_pindah_datang') 
                          ->where('id', $request['id_data'])
                         ->update([
@@ -602,7 +604,7 @@ class HomeController extends Controller
                  $data_kel = DB::table('keluarga_datang')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
                                 ->get();
-                $pdf = PDF::loadview('formpindahdatangwni', compact('pengajuan','nomor_surat','data_kel'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('suratketeranganpindahdatang', compact('pengajuan','nomor_surat','data_kel'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             //permohonan datang    
@@ -621,7 +623,7 @@ class HomeController extends Controller
                  $data_kel = DB::table('keluarga_perm_datang')
                                 ->where('id_perm_pindah',$pengajuan->id_perm)
                                 ->get();
-                $pdf = PDF::loadview('suratketeranganpindahdatang', compact('pengajuan','kategori','data_kel'))->setPaper('f4', 'portrait');
+                $pdf = PDF::loadview('formpindahdatangwni', compact('pengajuan','kategori','data_kel'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             

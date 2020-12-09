@@ -19,7 +19,11 @@
                         </div>
                     </div>
                     <div class="text-right">
-                        <a class="btn btn-primary " href="{{ route('list.kategori', $row->id) }}">Detail</a>
+                        @if(auth()->user())
+                            @can('isAdmin')
+                                <a class="btn btn-primary " href="{{ route('list.kategori', $row->id) }}">Detail</a>
+                            @endcan
+                        @endif
                     </div>
                 </div>
             </div>

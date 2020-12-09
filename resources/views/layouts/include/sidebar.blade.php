@@ -15,18 +15,18 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         
-        @if (auth()->user())
+      @if (auth()->user())
         
         @can('isAdmin')
-        <!-- Dashboard -->
-        <li class="nav-item {{ Request::path() === 'Administrator/home' ? 'active' : '' }}">
-          <a class="nav-link" href="{{ route('home.index') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-        </li>
-  
-        <!-- Divider -->
-        <hr class="sidebar-divider">
+          <!-- Dashboard -->
+          <li class="nav-item {{ Request::path() === 'Administrator/home' ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('home.index') }}">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Dashboard</span></a>
+          </li>
+    
+          <!-- Divider -->
+          <hr class="sidebar-divider">
   
         {{-- <!-- Heading -->
         <div class="sidebar-heading">
@@ -71,7 +71,7 @@
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="{{ route('kategori.index') }}">Data Kategori Surat</a>
+              {{--  <a class="collapse-item" href="{{ route('kategori.index') }}">Data Kategori Surat</a>  --}}
               <a class="collapse-item" href="{{ route('admin.index') }}">Data Pegawai</a>
             </div>
           </div>

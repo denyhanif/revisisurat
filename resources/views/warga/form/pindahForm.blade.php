@@ -20,63 +20,63 @@
                     <h1 class="h3 mb-0 text-gray-800">Data Diri</h1>
                     <div class="form-group col-md-8">
                         <label for="inputState">NIK</label>
-                        <input class="form-control" type="text" name="nik" >
+                        <input class="form-control" type="text" name="nik" required >
                     </div>     
                     <div class="form-group col-md-8">
                         <label for="inputState">Nama Lengkap</label>
-                        <input class="form-control" type="text" name="nama" >
+                        <input class="form-control" type="text" name="nama" required>
                     </div> 
                     <div class="form-group col-md-8">
                         <label for="inputState">Tempat lahir</label>
-                        <input class="form-control" type="text" name="tmpt_lahir" >
+                        <input class="form-control" type="text" name="tmpt_lahir" required>
                     </div>    
                     <div class="form-group col-md-8">
                         <label for="inputState">Tanggal Lahir</label>
-                        <input class="form-control" type="text" name="tgl_lahir" >
+                        <input class="form-control" type="text" name="tgl_lahir" required>
                     </div>         
                     <div class="form-group col-md-8">
                         <label for="inputState">Nomor Kartu Keluarga</label>
-                        <input class="form-control" type="text" name="no_kk" >
+                        <input class="form-control" type="text" name="no_kk" required>
                     </div>  
                     <div class="form-group col-md-8">
                         <label for="inputState">Nama Kepala Keluarga</label>
-                        <input class="form-control" type="text" name="nama_kk" >
+                        <input class="form-control" type="text" name="nama_kk" required>
                     </div>  
                     <div class="form-group col-md-8">
                         <label for="inputState">Alamat</label>
-                        <input class="form-control" type="text" name="alamat" >
+                        <input class="form-control" type="text" name="alamat" required>
                     </div>  
                     <div class="form-group col-md-8">
                         <label for="inputState">Desa</label>
-                        <input class="form-control" type="text" name="desa" >
+                        <input class="form-control" type="text" name="desa" required>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Kecamatan</label>
-                        <input class="form-control" type="text" name="kecamatan" >
+                        <input class="form-control" type="text" name="kecamatan" required>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Tujuan Alamat</label>
-                        <input class="form-control" type="text" name="tujuan_alamat" >
+                        <input class="form-control" type="text" name="tujuan_alamat" required>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Tujuan Desa</label>
-                        <input class="form-control" type="text" name="tujuan_desa" >
+                        <input class="form-control" type="text" name="tujuan_desa" required>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Tujuan Kecamatan</label>
-                        <input class="form-control" type="text" name="tujuan_kecamatan" >
+                        <input class="form-control" type="text" name="tujuan_kecamatan" required>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Tujuan Kabupaten / Kota</label>
-                        <input class="form-control" type="text" name="tujuan_kabupaten" >
+                        <input class="form-control" type="text" name="tujuan_kabupaten" required>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Tujuan Provinsi</label>
-                        <input class="form-control" type="text" name="tujuan_provinsi" >
+                        <input class="form-control" type="text" name="tujuan_provinsi" required>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Jumlah Pindah</label>
-                        <input class="form-control" type="text" name="jumlah_pindah" >
+                        <input class="form-control" type="text" name="jumlah_pindah" required>
                     </div>
                     <div class="text-left mt-4 mb-4">
                         <button type="submit" class="btn btn-primary">Simpan</button>

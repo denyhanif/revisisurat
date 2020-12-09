@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputState">jam lahir</label>
-                        <input class="form-control" type="text" name="jam_lahir" required>
+                        <input class="form-control" type="number" step="0.001" name="jam_lahir" required>
                     </div>       
                     <div class="form-group col-md-6">
                         <label for="inputState">Jenis Kelahiran</label>
@@ -77,11 +77,11 @@
                     </div>  
                     <div class="form-group col-md-6">
                         <label for="inputState">Berat Bayi (Dalam kg)</label>
-                        <input class="form-control" type="number" name="berat" required>
+                        <input class="form-control" type="number" step="0.01" name="berat" required>
                     </div>  
                     <div class="form-group col-md-6">
                         <label for="inputState">Panjang Bayi (Dalam cm)</label>
-                        <input class="form-control" type="number" name="panjang" required>
+                        <input class="form-control" type="number" step="0.001" name="panjang" required>
                     </div>
                     </div>
 
