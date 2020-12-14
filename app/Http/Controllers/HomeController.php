@@ -305,7 +305,7 @@ class HomeController extends Controller
                         ->update([
                           'nik' => $request['nik'],
                           'nama' => $request['nama'],
-                          'tempat_lahir' => $request['tmpt_lahir'],
+                          'tempat_lahir' => $request['tempat_lahir'],
                           'tgl_lahir' => $request['tgl_lahir'],
                           'no_kk' => $request['no_kk'],
                           'nama_kk' => $request['nama_kk'],

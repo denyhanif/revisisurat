@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
-        <h1 class="h3 mb-0 text-gray-800">Surat Pengantar Umum</h1>
+        <h1 class="h3 mb-0 text-gray-800">Surat Keterangan</h1>
     </div>
 
     <div class="row">
@@ -38,7 +38,7 @@
                         </div> 
                         <div class="form-group col-md-6">
                             <label for="inputState">Tempat lahir</label>
-                            <input class="form-control" type="text" name="tmpt_lahir" >
+                            <input class="form-control" type="text" name="tempat_lahir" >
                         </div>    
                         <div class="form-group col-md-6">
                             <label for="inputState">Tanggal Lahir</label>

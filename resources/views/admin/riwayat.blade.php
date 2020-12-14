@@ -35,7 +35,7 @@
                   <td>{{ $row->kategori->nama }}</td>
                   <td>{{ $row->tanggal_jadi() }}</td>
                   <td>{!! $row->status_label !!}</td>
-                  <td>  <a class="btn btn-primary" href="{{ route('print.surat', $row->id) }}"></a> </td>
+                  <td>  <a class="btn btn-primary fa fa-eye" href="{{ route('print.surat', $row->id) }}"></a> </td>
                 </tr>
                 @empty
                     <tr>

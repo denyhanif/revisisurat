@@ -126,18 +126,18 @@
                         </select>
                     </div> 
                     <div class="form-group col-md-6">
-                        <label for="inputState">Status KK bagi yang tidak pindah</label>
-                        <select name="tujuan_kk" class="form-control">
-                            <option selected >{{ $data->tujuan_kk }}</option>
+                        <label for="inputState">Status KK bagi yang pindah</label>
+                        <select name="status_no_kk_pindah" class="form-control">
+                            <option selected >{{$data->status_no_kk_pindah }}</option>
                             <option value="Numpang KK">Numpang KK</option>
                             <option value="Membuat KK Baru">Membuat KK Baru</option>
                             <option value="Nomor KK Tetap">Nomor KK Tetap</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputState">Status KK bagi yang pindah</label>
-                        <select name="status_no_kk_pindah" class="form-control">
-                            <option selected >{{$data->status_no_kk_pindah }}</option>
+                        <label for="inputState">Status KK bagi yang tidak pindah</label>
+                        <select name="status_kk" class="form-control">
+                            <option selected >{{$data->status_kk }}</option>
                             <option value="Numpang KK">Numpang KK</option>
                             <option value="Membuat KK Baru">Membuat KK Baru</option>
                             <option value="Nomor KK Tetap">Nomor KK Tetap</option>

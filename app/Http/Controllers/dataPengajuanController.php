@@ -83,7 +83,7 @@ class dataPengajuanController extends Controller
         switch ($kat) {
             //kelahiran
             case ('1'):
-                $no_surat = '472.11';
+               // $no_surat = '472.11';
 
                 $data = DB::table('data_kelahiran') 
                             ->insert([
@@ -140,7 +140,7 @@ class dataPengajuanController extends Controller
               break;
             //kematian
             case ('2'):
-              $no_surat = '472.11';
+             // $no_surat = '472.11';
               $data = DB::table('data_kematian') 
                       ->insert([
                         'no_kk' => $request['no_kk'],
@@ -199,7 +199,7 @@ class dataPengajuanController extends Controller
               break;
             //pengantar umum
             case ('3'):
-                            $no_surat = '472.11';
+                            //$no_surat = '472.11';
 
               $data = DB::table('data_pengantar_umum') 
                         ->insert([
@@ -221,7 +221,7 @@ class dataPengajuanController extends Controller
               break;
             //pengantar pindah
             case ('4'):
-                            $no_surat = '472.11';
+                            //$no_surat = '472.11';
 
               $data = DB::table('data_pengantar_pindah') 
                         ->insert([
@@ -248,7 +248,7 @@ class dataPengajuanController extends Controller
               break;
             //permohonan pindah
             case ('5'):
-                            $no_surat = '472.11';
+                         //   $no_surat = '472.11';
 
               $db = DB::table('data_permohonan_pindah') 
                         ->insert([
@@ -293,7 +293,7 @@ class dataPengajuanController extends Controller
               break;
             //pindah datang
             case ('6'):
-                            $no_surat = '472.11';
+                           // $no_surat = '472.11';
 
                   $db = DB::table('data_surat_pindah_datang') 
                           ->insert([
@@ -339,7 +339,7 @@ class dataPengajuanController extends Controller
               break;
             //permohonan pindah datang
             case ('7'):
-                            $no_surat = '472.11';
+                            //$no_surat = '472.11';
 
               $db = DB::table('data_permohonan_pindah_datang') 
                         ->insert([

@@ -21,94 +21,68 @@
                     </div>    
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Data Diri</h1>
-                    <div class="form-group col-md-8">
+                    <div class="row">
+                                            <div class="form-group col-md-6">
                         <label for="inputState">NIK</label>
                         <input class="form-control" type="text" name="nik" value="{{ $data->nik }}">
                     </div>     
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Nama Lengkap</label>
                         <input class="form-control" type="text" name="nama" value="{{ $data->nama }}">
                     </div> 
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tempat lahir</label>
                         <input class="form-control" type="text" name="tempat_lahir" value="{{ $data->tempat_lahir }}">
                     </div>    
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tanggal Lahir</label>
                         <input class="form-control" type="text" name="tgl_lahir" value="{{ $data->tgl_lahir }}">
                     </div>         
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Nomor Kartu Keluarga</label>
                         <input class="form-control" type="text" name="no_kk" value="{{ $data->no_kk }}">
                     </div>  
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Nama Kepala Keluarga</label>
                         <input class="form-control" type="text" name="nama_kk" value="{{ $data->nama_kk }}">
                     </div> 
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Alamat</label>
                         <input class="form-control" type="text" name="alamat" value="{{ $data->alamat }}">
                     </div>  
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Desa</label>
                         <input class="form-control" type="text" name="desa" value="{{ $data->desa }}">
                     </div>  
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Kecamatan</label>
                         <input class="form-control" type="text" name="kecamatan" value="{{ $data->kecamatan }}">
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tujuan Alamat</label>
                         <input class="form-control" type="text" name="tujuan_alamat" value="{{ $data->tujuan_alamat }}">
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tujuan Desa</label>
                         <input class="form-control" type="text" name="tujuan_desa" value="{{ $data->tujuan_desa }}">
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tujuan Kecamatan</label>
                         <input class="form-control" type="text" name="tujuan_kecamatan" value="{{ $data->tujuan_kecamatan }}">
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tujuan Kabupaten / Kota</label>
                         <input class="form-control" type="text" name="tujuan_kabupaten" value="{{ $data->tujuan_kabupaten }}">
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tujuan Provinsi</label>
                         <input class="form-control" type="text" name="tujuan_provinsi" value="{{ $data->tujuan_provinsi }}">
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Jumlah Pindah</label>
                         <input class="form-control" type="number" name="jumlah_pindah" value="{{ $data->jumlah_pindah }}">
                     </div>
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Keluarga Yang Pindah</label>
-                    </div>
-                    <div class="form-group col-md-12">
-                        @foreach ($data_kel as $item)
-                            <div class="form-group row">
-                            <div class="row col-auto" style="flex: 1 1 1px;">
-                                <div class="col-3">
-                                    <input type="text" hidden name="data[id][]" required value="{{ $item->id }}">
-                                    <label>NIK</label>
-                                    <input type="text" class="form-control" name="data[nik][]" required value="{{ $item->nik }}">    
-                                </div>
-                                <div class="col-4">
-                                    <label>Nama</label>
-                                    <input type="text" class="form-control" name="data[nama_kel][]" required  value="{{ $item->nama }}">    
-                                </div>
-                                <div class="col-3">
-                                    <label>Masa Berlaku KTP</label>
-                                    <input type="text" class="form-control" name="data[masa_berlaku][]" value="{{ $item->masa_berlaku }}">    
-                                </div>
-                                <div class="col-2">
-                                    <label>SHDK</label>
-                                    <input type="text" class="form-control" name="data[shdk][]" required value="{{ $item->shdk }}">    
-                                </div>
-                            </div>
-                            </div>
-                        @endforeach
-                        
+
                     </div>
                     <hr>
                     <div class="text-left mt-4 mb-4">

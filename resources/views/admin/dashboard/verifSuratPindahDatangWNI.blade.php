@@ -63,7 +63,7 @@
                     </div>  
                     <div class="form-group col-md-8">
                         <label for="inputState">Tanggal Lahir</label>
-                        <input class="form-control" type="text" name="tgl_lahir" value="{{ $data->tgl_lahir }}">
+                        <input class="form-control" type="date" name="tgl_lahir" value="{{ $data->tgl_lahir }}">
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Nama Lengkap</label>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Tanggal Kedatangan</label>
-                        <input class="form-control" type="text" name="tgl_datang" value="{{ $data->tgl_datang }}">
+                        <input class="form-control" type="date" name="tgl_datang" value="{{ $data->tgl_datang }}">
                     </div>
                     <div class="form-group col-md-8">
                         <label for="inputState">Alamat yang Dituju</label>

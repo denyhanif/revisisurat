@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
-        <h1 class="h3 mb-0 text-gray-800">Verifikasi Surat Pengantar Umum</h1>
+        <h1 class="h3 mb-0 text-gray-800">Verifikasi Surat Keterangan</h1>
     </div>
 
     <div class="row">
@@ -21,15 +21,18 @@
                     </div>    
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Data Diri</h1>
-                    <div class="form-group col-md-8">
+                    <div class="row">
+                        <div class="form-group col-md-6">
                         <label for="inputState">NIK</label>
                         <input class="form-control" type="text" name="nik" value="{{ $data->nik }}">
+                    </div>
+                    <div class="row" >
                     </div>     
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Nama Lengkap</label>
                         <input class="form-control" type="text" name="nama" value="{{ $data->nama }}">
                     </div> 
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Jenis Kelamin</label>
                         <select name="jk" class="form-control">
                             <option selected >{{$data->jk }}</option>
@@ -37,15 +40,15 @@
                             <option value="P">Perempuan</option>
                         </select>
                     </div> 
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tempat lahir</label>
                         <input class="form-control" type="text" name="tmpt_lahir" value="{{ $data->tempat_lahir }}">
                     </div>    
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tanggal Lahir</label>
                         <input class="form-control" type="text" name="tgl_lahir" value="{{ $data->tgl_lahir }}">
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">agama</label>
                         <select name="agama" class="form-control">
                             <option selected >{{$data->agama }}</option>
@@ -58,7 +61,7 @@
 
                         </select>
                     </div>        
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Status Kawin</label>
                         <select name="status_kawin" class="form-control">
                             <option selected> {{ $data->status_kawin }}</option>
@@ -74,22 +77,24 @@
                             @endswitch    --}}
                         </select>
                     </div>  
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Pekerjaan</label>
                         <input class="form-control" type="text" name="pekerjaan" value="{{ $data->pekerjaan }}">
                     </div>  
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Alamat</label>
                         <input class="form-control" type="text" name="alamat" value="{{ $data->alamat }}">
                     </div>  
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Tujuan</label>
-                        <input class="form-control" type="text" name="anak_ke" value="{{ $data->tujuan }}">
+                        <input class="form-control" type="text" name="tujuan" value="{{ $data->tujuan }}">
                     </div>  
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Keperluan</label>
-                        <input class="form-control" type="text" name="meninggal_tgl" value="{{ $data->keperluan }}">
+                        <input class="form-control" type="text" name="keperluan" value="{{ $data->keperluan }}">
                     </div>
+                    </div>
+                    
                     <div class="text-left mt-4 mb-4">
                         <button type="submit" class="btn btn-primary">Verifikasi</button>
                     </div>

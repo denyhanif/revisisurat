@@ -72,34 +72,35 @@
                                   @if ($row->pesanan->status == 0)
                                   @switch($kat)
                                       @case('1')
-                                      <a class="btn btn-warning" href="{{ route('verifikasi-lahir', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>
+                                      <a class="btn btn-sm btn-warning" href="{{ route('verifikasi-lahir', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>
                                           @break
                                       @case('2')
-                                      <a class="btn btn-warning" href="{{ route('verifikasi-mati', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
+                                      <a class="btn btn-sm btn-warning" href="{{ route('verifikasi-mati', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
                                           @break
                                       @case('3')
-                                      <a class="btn btn-warning" href="{{ route('verifikasi-umum', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
+                                      <a class="btn btn-sm btn-warning" href="{{ route('verifikasi-umum', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
                                           @break
                                       @case('4')
-                                      <a class="btn btn-warning" href="{{ route('verifikasi-pindah', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
+                                      <a class="btn btn-sm btn-warning" href="{{ route('verifikasi-pindah', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
                                           @break
                                       @case('5')
-                                      <a class="btn btn-warning" href="{{ route('verifikasi-permohonan-pindah', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
+                                      <a class="btn btn-sm btn-warning" href="{{ route('verifikasi-permohonan-pindah', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
                                           @break
                                       @case('6')
-                                      <a class="btn btn-warning" href="{{ route('verifikasi-datang', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
+                                      <a class="btn btn-sm btn-warning" href="{{ route('verifikasi-datang', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
                                           @break
                                       @case('7')
-                                      <a class="btn btn-warning" href="{{ route('verifikasi-permohonan-datang', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
+                                      <a class="btn btn-sm btn-warning" href="{{ route('verifikasi-permohonan-datang', $row->id) }}"><i class="fa fa-eye"></i> Verifikasi</a>    
                                           @break
                                       @default         
                                   @endswitch
                                   @elseif($row->pesanan->status == 1)
-                                      <a target="_blank" class="btn btn-primary" href="{{ route('print.surat', $row->id) }}">Print</a>
-                                      <a class="btn btn-danger" href="{{ route('send.jadi', $row->id) }}">Jadi</a>
+                                      <a target="_blank" class="btn btn-sm btn-primary" href="{{ route('print.surat', $row->id) }}">Print</a>
+                                      <a class="btn btn-sm btn-danger" href="{{ route('send.jadi', $row->id) }}">Jadi</a>
                                       
                                   @else($row->pesanan->status ==2)
-                                      <a class="btn btn-success" href="{{ route('ambil', $row->id) }}">Ambil</a>
+                                      <a target="_blank" class="btn btn-sm btn-primary" href="{{ route('print.surat', $row->id) }}">Print</a>
+                                      <a class="btn btn-sm btn-success" href="{{ route('ambil', $row->id) }}">Ambil</a>
                                   @endif
                                 </td>
                               </tr>

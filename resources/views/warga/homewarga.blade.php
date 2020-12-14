@@ -13,7 +13,7 @@
 
             </p>
             
-            <h3 class="text-center mb-4 ">Selamat Datang di aplikasi pemesanan surat Kecamatan Ngemplak </h3>
+            <h3 class="text-center mb-4 ">Selamat Datang di aplikasi pemesanan surat Umbulmartani </h3>
             <div class="text-center mt-1 mb-3">
                 <a class="btn btn-primary" href="{{ route('warga.dashboard') }}"> Pesan surat</a>
 

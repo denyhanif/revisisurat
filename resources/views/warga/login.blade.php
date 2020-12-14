@@ -129,12 +129,13 @@
                 @endif
                  <div class="p-5">
                    <div class="text-center">
+                          <p style="text-align:center;" class="mb-0" >
+                              <img class="aligncenter " style="height: 200px ; width:200px; border:none" src=" {{asset('img/n.png')}}"  alt="">
+                          </p>
                      <a href="/Administrator/home"><h1 class="h4 text-gray-900 mb-4">Login Warga!</h1>
                      </a>
                      
                    </div>
- 
- 
                    <form class="user" method="POST" action="{{ route('login.proses') }}">
                      @csrf
                      <div class="form-group">
@@ -173,11 +174,8 @@
  
  
                    <hr>
-                   {{-- <div class="text-center">
-                     <a class="small" href="forgot-password.html">Forgot Password?</a>
-                   </div> --}}
                    <div class="text-center">
-                     <a class="small" href="{{ route('warga.register') }}">Create an Account!</a>
+                     <a class="small" href="{{ route('warga.register') }}">Buat Akun Baru!</a>
                    </div>
                  </div>
                </div>
