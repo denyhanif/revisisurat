@@ -5,51 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    {{--  <style>
-        body{font-size: 12px;
-            margin-left: 20px;
-            margin-right: 20px;
-        };
-        .kop{margin-right: 10px};
-        table.saksi{
-            width: 50%;
-        };
-        td.header{
-            border: solid 1px;
-        }
-        
-    </style>  --}}
+    <style>
+   
+    table.kop {
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    </style>
 </head>
 <body>
      
         <table border="" align="center " style="margin-top: -20px ;margin_left:50px; margin-right:50px;margin-bottom:10px" >
             <tr style="padding-bottom: 0px">
-                <td style="margin-right: 20px"> <img src="public/img/kabupaten.jpg" alt="" width="90" height="90">
-                </td>
+                <td style="margin-right: 20px"> <img src="https://1.bp.blogspot.com/-9QN4hDujIgY/VzRwd4x7tBI/AAAAAAAAA0k/alfSqysJjpwf0qexK4WrbXBpOAk9VUcSgCLcB/s1600/logo%2Bslmn34.jpg" alt="" width="90" height="110"></td>
                 <td style="margin-top: 0;margin-bottom:0px; margin-left:30px;padding-left:20px;padding-bottom:0px:">
-                    <table>
+                    <table class="kop" align="center" style="margin-bottom: 0">
                         <tr>
-                            <td>PEMERINTAH DESA</td>
-                            <td>: BIMOMARTANI</td>
+                            <td> <font size="2">PEMERINTAH KABUPATEN SLEMAN</font> </td>
+
                         </tr>
-                        <tr>
-                            <td>KECAMATAN</td>
-                            <td>: NGEMPLAK</td>
-                        </tr>
-                        <tr>
-                            <td>KABUPATEN</td>
-                            <TD>: SLEMAN</TD>
-                        </tr>
-                        <TR>
-                            <td>PROVINSI</td>
-                            <TD>: DAERAH ISTIMEWA YOGYAKARTA</TD>
-                        </TR>
                     </table>
+                    <table align="center" class="kop" style="margin-top:-5;margin-bottom:0">
+                        <tr>
+                            <td> <font size="3" >KAPANEWON NGEMPLAK</font> </td>
+                            
+                        </tr>
+                    </table>
+                    <table class="kop" align="center" style="margin-top:-5px ">
+                        <tr>
+                            <td> <font size="4"> <b>PEMERINTAH KALURAHAN UMBULMARTANI</b> </font></td>
+                        </tr>
+                    </table>
+                    <table align="center" style="margin-top: -5px">
+                        <tr>
+                            <td > <img src="{{asset('img/Capture.PNG')}}" alt="" width="300" height="30"></td>
+                        </tr>
+                    </table>
+                    <table align="center" style="margin-bottom: 0; margin-top:-5px">
+                        <tr>
+                            <td> <font size="1" >Grogolan, Umbulmartani, Ngemplak, Sleman, 55584</font> </td>
+                            
+                        </tr>
+                                          
+                    </table>
+                    <table align="center" style="margin-top: -5px;margon-bottom:0">
+                        <tr>
+                            <td> <font size="1" > Email : desaumbulmartani@slemankab.go.ig</font> </td>
+                        </tr>
+                    </table>
+                    <table align="center" style="margin-top: -5px;margon-bottom:0">
+                        <tr>
+                            <td> <font size="1" >Telepon (0274) 898 091</font> </td>                       
+                        </tr>
+                    </table>
+                    
                 </td>
             </tr> 
         </table>
 
-        <hr style="border: solid 1px;margin-top: 0;">
+        <hr style="border: solid 1px;margin-top: -8;">
+        <hr style="border: solid 2px;margin-top: -5px;">
+
         <table align="center" style=" margin-top:20px">
             <tr align="center">
                 <td>
@@ -67,11 +82,11 @@
     <table>
         <tr>
             <td style="width: 150px">a. Nama</td>
-            <td>: bapak sugiono</td>
+            <td>: </td>
         </tr>
         <tr>
             <td style="width: 150px">b. Jabatan</td>
-            <td>: Kepala</td>
+            <td>: </td>
         </tr>
     </table>
     <table style="margin-top:10px;margin-bottom:10px">

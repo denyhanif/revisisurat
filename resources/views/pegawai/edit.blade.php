@@ -41,11 +41,10 @@
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Jabatan Pegawai</label>
                     <select name="role" class="form-control">
-                        <option>Pilih Jabatan</option>
-                        <option selected value="">{{ $pegawai->role }}</option>
-                    <option value="kades">Kades</option>
-                    <option value="admin">Admin</option>
-                    <option value="staff">Staff</option>
+                        {{--  <option selected value="">{{ $pegawai->role }}</option>  --}}
+                        <option value="kades" @if($pegawai->role == "kades") selected @endif</option>kades</option>
+                        <option value="admin" @if($pegawai->role == "admin") selected @endif</option>admin</option>
+                        <option value="staff" @if($pegawai->role == "staff") selected @endif</option>staff</option>
                     </select>
                         @error('role')
                     <span class="invalid-feedback" role="alert">

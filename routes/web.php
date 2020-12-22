@@ -27,7 +27,7 @@ Auth::routes([
     'verify' => false, 
   ]);
 
-Route::group(['prefix' => 'Administrator', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'Administrator', 'middleware' =>'auth'], function () {
     Route::resource('home', 'HomeController');
     Route::resource('kategori', 'kategoriSuratController');
     Route::get('kategori/data/{id}','kategoriSuratController@data')->name('kategori.data');//  m

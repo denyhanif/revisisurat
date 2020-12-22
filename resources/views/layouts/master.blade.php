@@ -126,14 +126,15 @@
                       new PNotify({
                         title: 'Ada Pesanan masuk',
                         text: 'Silahkan reload '
-                      });
+                      })
+                      ;
                   }
                 
               },
               
             });
     }
-    setInterval(update, 3000);
+    setInterval(update, 300);
   </script>
   @yield('js')
 

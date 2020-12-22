@@ -12,7 +12,7 @@
      
         <table border="" align="center " style="margin-top: -20px ;margin_left:50px; margin-right:50px; padding-left:40px" >
             <tr style="padding-bottom: 0px">
-                <td style="margin-right: 20px"> <img src="public/img/kabupaten.jpg" alt="" width="90" height="90">
+                <td style="margin-right: 20px"> <img src="https://1.bp.blogspot.com/-9QN4hDujIgY/VzRwd4x7tBI/AAAAAAAAA0k/alfSqysJjpwf0qexK4WrbXBpOAk9VUcSgCLcB/s320/logo%2Bslmn34.jpg" alt="" width="90" height="90">
                 </td>
                 <td style="margin-top: 0;margin-bottom:0px; margin-left:50px;padding-left:20px;padding-bottom:0px:">
                     <center>
