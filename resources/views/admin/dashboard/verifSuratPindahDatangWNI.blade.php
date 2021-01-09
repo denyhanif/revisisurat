@@ -43,7 +43,7 @@
                     </div>    
                     <div class="form-group col-md-8">
                         <label for="inputState">Kab / Kota</label>
-                        <input class="form-control" type="text" name="kab" value="{{ $data->kabupaten }}">
+                        <input class="form-control" type="text" name="kabupaten" value="{{ $data->kabupaten }}">
                     </div>         
                     <div class="form-group col-md-8">
                         <label for="inputState">Provinsi</label>

@@ -387,7 +387,7 @@ class WargaController extends Controller
 
     public function riwayat()
     {
-        $pengajuan = DataPengajuan::where('warga_id', Auth::guard('warga')->id())->paginate(10);
+        $pengajuan = DataPengajuan::where('warga_id', Auth::guard('warga')->id())->orderBy('created_at', 'DESC')->paginate(10);
         return view('warga.riwayat',compact('pengajuan'));
     }
     

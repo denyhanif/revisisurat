@@ -16,7 +16,7 @@
      
         <table border="" align="center " style="margin-top: -20px ;margin_left:50px; margin-right:50px;margin-bottom:10px" >
             <tr style="padding-bottom: 0px">
-                <td style="margin-right: 20px"> <img src="https://1.bp.blogspot.com/-9QN4hDujIgY/VzRwd4x7tBI/AAAAAAAAA0k/alfSqysJjpwf0qexK4WrbXBpOAk9VUcSgCLcB/s1600/logo%2Bslmn34.jpg" alt="" width="90" height="110"></td>
+                <td style="margin-right: 20px"> <img src="https://1.bp.blogspot.com/-9QN4hDujIgY/VzRwd4x7tBI/AAAAAAAAA0k/alfSqysJjpwf0qexK4WrbXBpOAk9VUcSgCLcB/s1600/logo%2Bslmn34.jpg" alt="" width="100" height="120"></td>
                 <td style="margin-top: 0;margin-bottom:0px; margin-left:30px;padding-left:20px;padding-bottom:0px:">
                     <table class="kop" align="center" style="margin-bottom: 0">
                         <tr>
@@ -37,7 +37,7 @@
                     </table>
                     <table align="center" style="margin-top: -5px">
                         <tr>
-                            <td > <img src="{{asset('img/Capture.PNG')}}" alt="" width="300" height="30"></td>
+                            <td > <img src="https://1.bp.blogspot.com/-f06HvCEwnG0/X-FYFGSQa8I/AAAAAAAAC-s/DUfxkROCI64Reciepf_qgDM3hcK6dDWOwCLcBGAsYHQ/s459/image004.gif" alt="" width="300" height="30"></td>
                         </tr>
                     </table>
                     <table align="center" style="margin-bottom: 0; margin-top:-5px">
@@ -153,11 +153,9 @@
             <td height=""> Sleman,{{ tgl_indo(Carbon\Carbon::parse(now())->format('Y-m-d')) }} </td>
         </tr>
          <tr style="">
-            <td> Kepala Desa,</td>
+            <td> Kalurahan,</td>
         </tr>
-        <tr style="">
-            <td>.......</td>
-        </tr>
+        
     </table>
    
 

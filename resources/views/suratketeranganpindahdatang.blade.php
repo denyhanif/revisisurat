@@ -86,7 +86,7 @@
         </tr>
         <tr>
             <td style="margin-top: 0">
-            KECAMATAN
+            KAPANEWON
             </td>
             <td>:</td>
 
@@ -108,7 +108,7 @@
         </tr>
         <tr>
             <td style="margin-top: 0">
-            DESA/KELURAHAN
+            DESA/KALURAHAN
             </td>
             <td>:</td>
 
@@ -140,7 +140,7 @@
                     </center>
                 </td>
             </tr>
-            <tr><td><center><b><font size="1">Antar Kecamatan Dalam Satu Kabupaten/Kota</font></b></center></td></tr>
+            <tr><td><center><b><font size="1">Antar Kapanewon Dalam Satu Kabupaten/Kota</font></b></center></td></tr>
             <tr><td><center><font size="1">No. {{ $pengajuan->nomer_surat }}</font></center></td></tr>
         </table>
     
@@ -150,45 +150,45 @@
     <table style="font-size: 12px">
         <tr>
             <td style="width: 200px">1.Nomor Kartu Keluarga</td>
-            <td id="data">:{{ $pengajuan->no_kk }}</td>
+            <td id="data">: {{ $pengajuan->no_kk }}</td>
         </tr>
          <tr>
             <td style="">2.Nama Kepala Keluarga</td>
-            <td colspan="" id="data">:{{ $pengajuan->nama_kk }}</td>
+            <td colspan="" id="data">: {{ $pengajuan->nama_kk }}</td>
         </tr>
         <tr>
             <td style="" >3.Alamat</td>
-            <td id="data">:{{ $pengajuan->alamat }}</td>
+            <td id="data">: {{ $pengajuan->alamat }}</td>
         </tr>
     </table>
     <table style="margin-left:210px; font-size: 12px; ">
         <tr>
-            <td>Desa/Kelurahan</td>
-            <td>:{{ $pengajuan->desa }}</td>
+            <td>Desa/Kalurahan</td>
+            <td>: {{ $pengajuan->desa }}</td>
             <td style="margin-left: 50px">Kabupaten</td>
-            <td>:{{ $pengajuan->kabupaten }}</td>
+            <td>: {{ $pengajuan->kabupaten }}</td>
         </tr>
         <tr>
-            <td>Kecamatan</td>
-            <td>:{{ $pengajuan->kecamatan }}</td>
+            <td>Kapanewon</td>
+            <td>: {{ $pengajuan->kecamatan }}</td>
             <td style="margin-left: 50px">Provinsi</td>
-            <td>:{{ $pengajuan->provinsi }}</td>
+            <td>: {{ $pengajuan->provinsi }}</td>
         </tr>
         
     </table>
     <table style="font-size: 12px">
         <tr>
             <td style="width: 200px" >4.NIK Pemohon</td>
-            <td id="data">:{{ $pengajuan->nik_pemohon }}</td>
+            <td id="data">: {{ $pengajuan->nik_pemohon }}</td>
         </tr>
           <tr>
             <td style="width: 150px" >5.Tempat/Tanggal lahir</td>
-            <td id="data">:{{ $pengajuan->tmpt_lahir }}</td>
-            <td>:{{ $pengajuan->tgl_lahir }}</td>
+            <td id="data">: {{ $pengajuan->tmpt_lahir }}</td>
+            <td>/ {{ $pengajuan->tgl_lahir }}</td>
         </tr>
         <tr>
             <td style="width: 200px" >6. Nama Lengkap Pemohon</td>
-            <td id="data">:{{ $pengajuan->nama }}</td>
+            <td id="data">: {{ $pengajuan->nama }}</td>
         </tr>
     </table>
     <table style="margin-top: 10px">
@@ -199,46 +199,46 @@
     <table style="font-size: 12px">
         <tr>
             <td style="width: 200px">1.Status KK bagi yang pindah</td>
-            <td id="data">:{{ $pengajuan->tujuan_kk }}</td>
+            <td id="data">: {{ $pengajuan->tujuan_kk }}</td>
         </tr>
         <tr>
             <td style="width: 150px">2.Nomor Kartu Keluarga</td>
-            <td colspan="" id="data">:{{ $pengajuan->no_kk }}</td>
+            <td colspan="" id="data">: {{ $pengajuan->no_kk }}</td>
         </tr>
         <tr>
             <td style="width: 150px" >3.NIK pemohon</td>
-            <td id="data">:{{ $pengajuan->nik_pemohon  }}</td>
+            <td id="data">: {{ $pengajuan->nik_pemohon  }}</td>
         </tr>
         <tr>
             <td style="width: 150px" >4.Nama Kepala Keluarga</td>
-            <td id="data">:{{ $pengajuan->tujuan_nama_kk }}</td>
+            <td id="data">: {{ $pengajuan->tujuan_nama_kk }}</td>
         </tr>
         <tr>
             <td style="width: 150px" >5.Tanggal Kedatangan</td>
-            <td id="data">:{{ $pengajuan->tgl_datang }}</td>
+            <td id="data">: {{ $pengajuan->tgl_datang }}</td>
         </tr>
         <tr>
             <td style="width: 150px" >6. Alamat yang Dituju</td>
-            <td id="data">:{{ $pengajuan->tujuan_alamat }}</td>
+            <td id="data">: {{ $pengajuan->tujuan_alamat }}</td>
         </tr>
     </table>
 
     <table style="margin-left:210px;font-size:12px">
         <tr>
-            <td>Desa/Kelurahan</td>
-            <td>:{{ $pengajuan->tujuan_desa }}</td>
+            <td>Desa/Kalurahan</td>
+            <td>: {{ $pengajuan->tujuan_desa }}</td>
             <td style="margin-left: 100px">Kabupaten</td>
-            <td>:{{ $pengajuan->tujuan_kabupaten }}</td>
+            <td>: {{ $pengajuan->tujuan_kabupaten }}</td>
         </tr>
         <tr>
-            <td>Kecamatan</td>
-            <td>:{{ $pengajuan->tujuan_kecamatan }}</td>
+            <td>Kapanewon</td>
+            <td>: {{ $pengajuan->tujuan_kecamatan }}</td>
             <td style="margin-left: 100px">Provinsi</td>
-            <td>:{{ $pengajuan->tujuan_provinsi }}</td>
+            <td>: {{ $pengajuan->tujuan_provinsi }}</td>
         </tr>
         <tr style="margin-bottom: 5px">
             <td>Kode pos</td>
-            <td>:{{ $pengajuan->tujuan_kodepos }}</td>
+            <td>: {{ $pengajuan->tujuan_kodepos }}</td>
             <td style="margin-left: 100px">Telepon</td>
             <td>:</td>
         </tr>
@@ -246,8 +246,7 @@
     </table>
      <table>
         <tr>
-            <td style="width: 150px ; font-size:12px" >7. Keluarga yang Datang</td>
-            <td id="data">:</td>
+            <td style="width: 190px ; font-size:12px" >7. Keluarga yang Datang</td>
         </tr>
     </table>
             
@@ -255,47 +254,46 @@
         <tr style="border: 1px solid black">
             <th style="border: 1px solid black">NO</th>
             <th style="border: 1px solid black">NIK</th>
-            <th style="border: 1px solid black">NAma</th>
-            <th style="border: 1px solid black">MAsa berlaku ktp</th>
-            <th style="border: 1px solid black">SHDk</th>
+            <th style="border: 1px solid black">Nama</th>
+            <th style="border: 1px solid black">Masa berlaku ktp</th>
+            <th style="border: 1px solid black">SHDK</th>
         </tr>
-        @foreach ($data_kel as $item)
-        <tr style="border: 1px solid black">
-                @php
+      @php
                     $no = 1;
-                @endphp
-            <td style="border: 1px solid black">{{ $no++ }}</td>
-            <td style="border: 1px solid black">{{ $item->nik }}</td>
+            @endphp
+        @foreach ($data_kel as $item)
+        <tr style="border: 1px solid black; ">
+            <td style="border: 1px solid black; text-align: center;">{{ $no++ }}</td>
+            <td style="border: 1px solid black; ">{{ $item->nik }}</td>
             <td style="border: 1px solid black">{{ $item->nama}}</td>
-            <td style="border: 1px solid black">{{ $item->masa_berlaku }}</td>
-            <td style="border: 1px solid black">{{ $item->shdk }}</td>
+            <td style="border: 1px solid black;">{{ $item->masa_berlaku }}</td>
+            <td style="border: 1px solid black;">{{ $item->shdk }}</td>
         </tr>
             
         @endforeach
     </table>
-     <table align="left" border="" style=" margin-top:0px;padding-top:0px; ">
+     <table class="isi" align="left" border="" style=" margin-top:30px;padding-top:0px; ">
     <tr><td height=""></td></tr>
-    <tr style="">
-        <td> Menegtahui</td>
+    <tr align="CENTER" style="">
+        <td> Mengetahui</td>
     </tr>
     <tr style="">
-        <td>a.n KEPALA DESA UMBULMARTANI</td>
+        <td>CAMAT NGEMPLAK</td>
     </tr>
     <tr ><td height="50"></td></tr>
-    <tr align="center">
-        <td><b>sUGIO</b></td>
-    </tr>
-   <table align="right" border="" style="margin_left:500px ">
+    
+   <table class="isi" align="right" border="" style="margin_left:400px ">
     <tr><td height=""></td></tr>
-    <tr style="">
-        <td>Umbulmartani, 20/Desember/2020 </td>
+    <tr style="text-align:center">
+        <td>Umbulmartani, {{ tgl_indo(Carbon\Carbon::parse(now())->format('Y-m-d')) }}</td>
+    </tr>
+    
+    <tr style="text-align: center"><td>Kepala Dinas</td></tr>
+    <tr >
+        <td height="50px"></td>
     </tr>
     <tr align="center">
-        <td>pelapor</td>
-    </tr>
-    <tr ><td height="50"></td></tr>
-    <tr align="center">
-        <td><b>Rahmat edi</b></td>
+        <td>Sugiyo</td>
     </tr>
 
 </table>

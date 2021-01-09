@@ -71,7 +71,7 @@
         </tr>
         <tr>
             <td style="margin-top: 0">
-            KECAMATAN
+            KAPANEWON
             </td>
             <td>:</td>
 
@@ -93,7 +93,7 @@
         </tr>
         <tr>
             <td style="margin-top: 0">
-            DESA/KELURAHAN
+            DESA/KALURAHAN
             </td>
             <td>:</td>
 
@@ -150,37 +150,37 @@
     <table style="font-size: 12px;padding:5px">
         <tr style="padding: 2px" >
             <td style="width: 200px">1.Nomor Kartu Keluarga</td>
-            <td >:{{ $pengajuan->no_kk }}</td>
+            <td style="width: 400px" > <table  style=" border: 1px solid black;margin:1px;padding 1px"><tr><td>{{ $pengajuan->no_kk }}</td></tr></table>  </td>
         </tr>
         <tr>
             <td>2.Nama Kepala Keluarga</td>
-            <td>:{{ $pengajuan->nama_kk }}</td>
+            <td><table  style=" border: 1px solid black;"><tr><td>{{ $pengajuan->nama_kk }}</td></tr></table>  </td>
         </tr>
         <tr>
             <td>3.Alamat</td>
-            <td>:{{ $pengajuan->alamat }}</td>
+            <td><table  style=" border: 1px solid black;"><tr><td>{{ $pengajuan->alamat }}</td></tr></table>  </td>
         </tr>
     </table>
     <table style="margin-left:210px; font-size: 12px; ">
         <tr>
             <td style="width: 150px">Dusun/Dukuh/Kampung</td>
-            <td colspan="" id="data">:{{ $pengajuan->desa }}</td>
+            <td colspan="" id="data"> <table style="border:  1px solid black"><tr><td>{{ $pengajuan->desa }}</td></tr></table></td>
         </tr>
         <tr>
-            <td style="width:150px">a.Desa/Kelurahan</td>
-            <td style="width:150px;">:{{ $pengajuan->desa }}</td>
-            <td>c.Kab/Kota</td>
-            <td>: sleman</td>
+            <td style="width:150px">a. Desa/Kalurahan</td>
+            <td style="width:150px;"> <table style="border: 1px solid black"><tr><td> {{ $pengajuan->desa }}</td></tr></table></td>
+            <td> c.Kab/Kota</td>
+            <td> <table style="border: 1px solid black"><tr><td>{{ $pengajuan->kab }}</td></tr></table></td>
         </tr>
         <tr>
-            <td style="width:150px">b.Kecamatan</td>
-            <td style="width:150px">:{{ $pengajuan->kecamatan }}</td>
+            <td style="width:150px">b.Kapanewon</td>
+            <td style="width:150px"><table style="border: 1px solid black"><tr><td>{{ $pengajuan->kecamatan }}</td></tr></table></td>
             <td>d.Provinsi/Kota</td>
-            <td>: {{ $pengajuan->provinsi }}</td>
+            <td><table style="border: 1px solid black"><tr><td>{{ $pengajuan->provinsi }}</td></tr></table></td>
         </tr>
         <tr>
             <td style="width: 150px">Kodepos</td>
-            <td style="width: 150px">:{{ $pengajuan->kodepos }}</td>
+            <td style="width: 150px"><table style="border: 1px solid black"><tr><td> {{ $pengajuan->kodepos }}</td></tr></table></td>
             <td>telephone</td>
             <td>:</td>
         </tr>
@@ -188,15 +188,15 @@
     <table style=" font-size:12px">
         <tr>
             <td style="width: 200px" >4.NIK Pemohon</td>
-            <td id="data">:{{ $pengajuan->nik_pemohon }}</td>
+            <td id="data"> <table style="border: 1px solid black"><tr><td>{{ $pengajuan->nik_pemohon }}</td></tr></table></td>
         </tr>
         <tr>
             <td style="width: 150px">5.Tempat/Tanggal Lahir</td>
-            <td>:{{ $pengajuan->tempat_lahir }}/{{ $pengajuan->tgl_lahir }}</td>
+            <td><table style="border: 1px solid black"><tr><td>{{ $pengajuan->tempat_lahir }} / {{ $pengajuan->tgl_lahir }}</td></tr></table></td>
         </tr>
         <tr style="width: 150px">
             <td> 6.Nama Lengkap</td>
-            <td>:{{ $pengajuan->nama }}</td>
+            <td><table style="border: 1px solid black"><tr><td> {{ $pengajuan->nama }}</td></tr></table></td>
         </tr>
     </table>
    
@@ -206,72 +206,74 @@
     <table style=" font-size:12px;padding:5px">
         <tr>
             <td style="width: 200px">1.Alasan Pindah</td>
-            <td id="data">:{{ $pengajuan->alasan_pindah }}</td>
+            <td id="data"> <table style="border: 1px solid black"><tr><td>{{ $pengajuan->alasan_pindah }}</td></tr></table></td>
         </tr>
         <tr>
             <td>2.Alamat tujuan</td>
-            <td>:{{ $pengajuan->tujuan_alamat_pindah }}</td>
+            <td><table style="border: 1px solid black"><tr><td> {{ $pengajuan->tujuan_alamat_pindah }}</td></tr></table></td>
         </tr>
     </table>
      <table style="margin-left:210px;font-size:12px ">
         <tr>
             <td style="width: 150px">Dusun/Dukuh/Kampung</td>
-            <td colspan="" id="data">:</td>
+            <td colspan="" id="data"></td>
         </tr>
         <tr>
-            <td style="width:150px">a.Desa/Kelurahan</td>
-            <td style="width:150px;">:{{ $pengajuan->tujuan_desa }}</td>
+            <td style="width:150px">a.Desa/Kalurahan</td>
+            <td style="width:150px;">
+                <table style="border: 1px solid black"><tr><td>{{ $pengajuan->tujuan_desa }}</td></tr></table> 
+            </td>
             <td>c.Kab/Kota</td>
-            <td>: {{ $pengajuan->tujuan_kab }}</td>
+            <td><table style="border: 1px solid black"><tr><td>{{ $pengajuan->tujuan_kab }}</td></tr></table></td>
         </tr>
         <tr>
-            <td style="width:150px">b.Kecamatan</td>
-            <td style="width:150px">:{{ $pengajuan->tujuan_kecamatan }}</td>
+            <td style="width:150px">b.Kapanewon</td>
+            <td style="width:150px"><table style="border: 1px solid black"><tr><td>{{ $pengajuan->tujuan_kecamatan }}</td></tr></table> </td>
             <td>d.Provinsi/Kota</td>
-            <td>: {{ $pengajuan->tujuan_prov }}</td>
+            <td><table style="border: 1px solid black"><tr><td> {{ $pengajuan->tujuan_prov }}</td></tr></table></td>
         </tr>
         <tr>
             <td style="width: 150px">Kodepos</td>
-            <td style="width: 150px">:{{ $pengajuan->tujuan_kodepos }}</td>
+            <td style="width: 150px"><table style="border: 1px solid black"><tr><td> {{ $pengajuan->tujuan_kodepos }}</td></tr></table></td>
             <td>telephone</td>
             <td>:</td>
         </tr>
     </table>
     <table style=" font-size:12px">
         <tr>
-            <td>3.jenis kepindahan</td>
-            <td>:{{ $pengajuan->jenis_pindah }}</td> 
+            <td style="width: 200px">3.jenis kepindahan</td>
+            <td><table style="border: 1px solid black"><tr><td> {{ $pengajuan->jenis_pindah }}</td></tr></table></td> 
         </tr>
         <tr>
             <td>4.Status KK bagi yang tidak pindah</td>
-            <td>:{{ $pengajuan->status_kk }}</td>
+            <td><table style="border: 1px solid black"><tr><td>{{ $pengajuan->status_kk }}</td></tr></table> </td>
         </tr>
         <tr>
             <td>5.Status nomer kk bagi yang pindah</td>
-            <td>:{{ $pengajuan->status_no_kk_pindah }}</td>
+            <td><table style="border: 1px solid black"><tr><td>{{ $pengajuan->status_no_kk_pindah }}</td></tr></table> </td>
         </tr>
         <tr>
-            <td>6.kluarga Yang Pindah</td>
+            <td>6.Keluarga Yang Pindah</td>
         </tr>
     </table>
-    <table align="" border=" "  style="width: 100% ;border: 1px solid black" >
+    <table align=" center" border=" "  style="width: 100% ;border: 1px solid black" >
         <tr style="border: 1px solid black">
             <th style="border: 1px solid black">NO</th>
             <th style="border: 1px solid black">NIK</th>
-            <th style="border: 1px solid black">NAma</th>
-            <th style="border: 1px solid black">MAsa berlaku ktp</th>
-            <th style="border: 1px solid black">SHDk</th>
+            <th style="border: 1px solid black">Nama</th>
+            <th style="border: 1px solid black">Masa berlaku ktp</th>
+            <th style="border: 1px solid black">SHDK</th>
         </tr>
-        @foreach ($data_kel as $item)
-        <tr style="border: 1px solid black">
-            @php
+         @php
                     $no = 1;
-                @endphp
-            <td style="border: 1px solid black">{{ $no++ }}</td>
-            <td style="border: 1px solid black">{{ $item->nik }}</td>
+            @endphp
+        @foreach ($data_kel as $item)
+        <tr style="border: 1px solid black; ">
+            <td style="border: 1px solid black; text-align: center;">{{ $no++ }}</td>
+            <td style="border: 1px solid black; ">{{ $item->nik }}</td>
             <td style="border: 1px solid black">{{ $item->nama}}</td>
-            <td style="border: 1px solid black">{{ $item->masa_berlaku }}</td>
-            <td style="border: 1px solid black">{{ $item->shdk }}</td>
+            <td style="border: 1px solid black;">{{ $item->masa_berlaku }}</td>
+            <td style="border: 1px solid black;">{{ $item->shdk }}</td>
         </tr>
             
         @endforeach

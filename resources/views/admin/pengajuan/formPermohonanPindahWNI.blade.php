@@ -18,57 +18,61 @@
                     </div>    
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Data Daerah Asal</h1>
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Nomor Kartu Keluarga</label>
-                        <input class="form-control" type="text" name="no_kk" required >
-                    </div>  
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Nama Kepala Keluarga</label>
-                        <input class="form-control" type="text" name="nama_kk" required>
-                    </div>  
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Alamat</label>
-                        <input class="form-control" type="text" name="alamat" required>
-                    </div>     
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Desa / Kelurahan</label>
-                        <input class="form-control" type="text" name="desa" required >
-                    </div> 
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Kecamatan</label>
-                        <input class="form-control" type="text" name="kecamatan" required>
-                    </div>    
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Kab / Kota</label>
-                        <input class="form-control" type="text" name="kab" required>
-                    </div>         
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Provinsi</label>
-                        <input class="form-control" type="text" name="provinsi" required>
-                    </div>  
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Kodepos</label>
-                        <input class="form-control" type="text" name="kodepos" required>
-                    </div> 
-                    <div class="form-group col-md-8">
-                        <label for="inputState">NIK Pemohon</label>
-                        <input class="form-control" type="text" name="nik_pemohon" required>
-                    </div>  
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Tempat Lahir</label>
-                        <input class="form-control" type="text" name="tempat_lahir" required>
-                    </div>  
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Tanggal Lahir</label>
-                        <input class="form-control" type="text" name="tgl_lahir" required >
+                    <div class="row">
+                            <div class="form-group col-md-6">
+                            <label for="inputState">Nomor Kartu Keluarga</label>
+                            <input class="form-control" type="text" name="no_kk" required >
+                        </div>  
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Nama Kepala Keluarga</label>
+                            <input class="form-control" type="text" name="nama_kk" required>
+                        </div>  
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Alamat</label>
+                            <input class="form-control" type="text" name="alamat" required>
+                        </div>     
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Desa / Kelurahan</label>
+                            <input class="form-control" type="text" name="desa" required >
+                        </div> 
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Kecamatan</label>
+                            <input class="form-control" type="text" name="kecamatan" required>
+                        </div>    
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Kab / Kota</label>
+                            <input class="form-control" type="text" name="kab" required>
+                        </div>         
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Provinsi</label>
+                            <input class="form-control" type="text" name="provinsi" required>
+                        </div>  
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Kodepos</label>
+                            <input class="form-control" type="text" name="kodepos" required>
+                        </div> 
+                        <div class="form-group col-md-6">
+                            <label for="inputState">NIK Pemohon</label>
+                            <input class="form-control" type="text" name="nik_pemohon" required>
+                        </div>  
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Tempat Lahir</label>
+                            <input class="form-control" type="text" name="tempat_lahir" required>
+                        </div>  
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Tanggal Lahir</label>
+                            <input class="form-control" type="text" name="tgl_lahir" required >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Nama Lengkap</label>
+                            <input class="form-control" type="text" name="nama" required>
+                        </div>
                     </div>
-                    <div class="form-group col-md-8">
-                        <label for="inputState">Nama Lengkap</label>
-                        <input class="form-control" type="text" name="nama" required>
-                    </div>
+                    
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Data Kepindahan</h1>
-                    <div class="form-group col-md-8">
+                    <div class="row">
+                        <div class="form-group col-md-6">
                         <label for="inputState">Alasan Pindah</label>
                         <select name="alasan_pindah" class="form-control" required>
                             <option selected>-- Pilih --</option>
@@ -81,31 +85,31 @@
                             <option value="Lainnya">Lainnya</option>
                         </select>
                     </div> 
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Alamat Tujuan Pindah</label>
                         <input class="form-control" type="text" name="tujuan_alamat_pindah" required >
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Desa / Kelurahan</label>
                         <input class="form-control" type="text" name="tujuan_desa" required >
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Kecamatan</label>
                         <input class="form-control" type="text" name="tujuan_kecamatan" required>
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Kab / Kota</label>
                         <input class="form-control" type="text" name="tujuan_kab" required>
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Provinsi</label>
                         <input class="form-control" type="text" name="tujuan_prov" required>
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Kodepos</label>
                         <input class="form-control" type="text" name="tujuan_kodepos" required>
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Jenis Kepindahan</label>
                         <select name="jenis_pindah" class="form-control" required>
                             <option selected>-- Pilih --</option>
@@ -115,7 +119,7 @@
                             <option value="Anggota Keluarga">Anggota Keluarga</option>
                         </select>
                     </div> 
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Status KK bagi yang tidak pindah</label>
                         <select name="status_kk" class="form-control" required>
                             <option selected>-- Pilih --</option>
@@ -124,7 +128,7 @@
                             <option value="Nomor KK Tetap">Nomor KK Tetap</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Status KK bagi yang pindah</label>
                         <select name="status_no_kk_pindah" class="form-control" required>
                             <option selected>-- Pilih --</option>
@@ -132,6 +136,7 @@
                             <option value="Membuat KK Baru">Membuat KK Baru</option>
                             <option value="Nomor KK Tetap">Nomor KK Tetap</option>
                         </select>
+                    </div>
                     </div>
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Keluarga yang Pindah</h1>

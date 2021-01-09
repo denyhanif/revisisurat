@@ -47,7 +47,7 @@
     </tr>
 </table>
 
-<table style="margin-left: 1.5cm; font-size:11px;" border="">
+<table style="margin-left: 2cm; font-size:11px;" border="">
     <tr>
         <td>1. Nama Kepala Keluarga</td>
         <td>: {{ $pengajuan->no_kk }}</td>
@@ -65,7 +65,7 @@
 </tr>
 <tr>
     <td>
-        <table style="margin-left: 1.5cm;">
+        <table style="margin-left: 2cm;margin-top:-15; padding-top:0;">
             <tr>
                 <td>1. NIK</td>
                 <td>: {{ $pengajuan->nik }}</td>
@@ -138,7 +138,7 @@
     </tr>
     <tr>
         <td>
-            <table style="margin-left: 1.5cm;">
+            <table style="margin-left: 2cm;margin-top:-15; padding-top:0;">
                 <tr>
                     <td>1. NIK</td>
                     <td>: {{$pengajuan->ibu_nik  }}</td>
@@ -175,7 +175,7 @@
     </tr>
     <tr>
         <td>
-            <table style="margin-left: 1.5cm;">
+            <table style="margin-left: 2cm;margin-top:-15; padding-top:0;">
                 <tr>
                     <td>1. NIK</td>
                     <td>:{{ $pengajuan->ayah_nik }} </td>
@@ -212,7 +212,7 @@
     </tr>
     <tr>
         <td>
-            <table style="margin-left: 1.5cm;">
+            <table style="margin-left: 2cm;margin-top:-15; padding-top:0;">
                 <tr>
                     <td>1. NIK</td>
                     <td>:{{ $pengajuan->pelapor_nik }} </td>
@@ -258,7 +258,7 @@
     </tr>
     <tr>
         <td>
-            <table style="margin-left: 1.5cm;">
+            <table style="margin-left: 2cm;margin-top:-15; padding-top:0;">
                 <tr>
                     <td>1. NIK</td>
                     <td>:{{ $pengajuan->saksi1_nik }} </td>
@@ -278,7 +278,7 @@
             </table>
         </td>
          <td>
-            <table style="margin-left: 1.5cm;">
+            <table style="margin-left: 2cm;margin-top:-15; padding-top:0;">
                 <tr>
                     <td>1. NIK</td>
                     <td>:{{ $pengajuan->saksi2_nik }} </td>
@@ -306,19 +306,19 @@
     
 
 
-    <table width="100%" style="font-size: 11px" align="left">
+    <table  align="right" style="font-size: 11px; align:right" >
         <tr>
-            <td> <center>Mengetahui</center></td>
-            <td style=""> <center> umbulmartani,{{ tgl_indo(Carbon\Carbon::parse(now())->format('Y-m-d')) }} </center></td>
+            <td style=""> umbulmartani, {{ tgl_indo(Carbon\Carbon::parse(now())->format('Y-m-d')) }} </td>
         </tr>
         <tr>
-            <td> <center>  a.n Kepala Desa Umbulmartani</center></td>
-            <td > <center> pelapor</center> </td>
+            <td> a.n Kepala Desa Umbulmartani</td>
         </tr>
-        <tr style="margin-top: 10px">
-            <td> <center>rahmat edi</center> </td>
+        <tr >
+            <td height="45px" > </td>
+        </tr>
+        <tr style="align:center;margrin-bottom:200px" >
            
-            <td> <center>sugio</center></td>
+            <td> <center>Sugiyo</center></td>
         </tr>
         
     </table>

@@ -1,6 +1,6 @@
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -28,17 +28,14 @@
           <!-- Divider -->
           <hr class="sidebar-divider">
   
-        {{-- <!-- Heading -->
-        <div class="sidebar-heading">
-          Interface
-        </div> --}}
+        
   
         <!-- Tambah Pengajuan -->
         <li class="nav-item {{ Request::path() === 'Administrator/pengajuan/create' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('pengajuan.create') }}">
               <i class="fas fa-fw fa-tachometer-alt"></i>
               <span>Tambah Pengajuan</span></a>
-          </li>
+        </li>
 
           {{--  <li class="nav-item {{ Request::path() === 'Administrator/pengajuan/create' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('reset') }}">
@@ -47,7 +44,6 @@
           </li>  --}}
         <!-- Divider -->
         <hr class="sidebar-divider">
-  
         <!-- Riwayat -->
         <li class="nav-item {{ Request::path() === 'Administrator/riwayat' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('riwayat.pengajuan') }}">
@@ -56,14 +52,12 @@
           </li>
   
         <!-- Divider -->
-        <hr class="sidebar-divider">
-  
+        <hr class="sidebar-divider">  
         <!-- Heading -->
         {{-- <div class="sidebar-heading">
           Addons
         </div> --}}
-  
-        <!-- MAster -->
+        <!-- Master -->
         <li class="nav-item {{ Request::path() === 'Administrator/kategori' ? 'active' : '' }}">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
@@ -113,23 +107,28 @@
               <i class="fas fa-fw fa-tachometer-alt"></i>
               <span>Dashboard</span></a>
           </li>
-        <li class="nav-item {{ Request::path() === 'Administrator/riwayat' ? 'active' : '' }}">
-          <a class="nav-link" href="{{ route('riwayat.pengajuan') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Riwayat</span></a>
-        </li>
-        <li class="nav-item {{ Request::path() === 'Administrator/kategori' ? 'active' : '' }}">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Rekap </span>
-          </a>
-          <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="{{ route('rekap.tahun') }}">Rekap Tahun</a>
-             
+          <li class="nav-item {{ Request::path() === 'Administrator/pengajuan/create' ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('pengajuan.create') }}">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Tambah Pengajuan</span></a>
+          </li>
+          <li class="nav-item {{ Request::path() === 'Administrator/riwayat' ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('riwayat.pengajuan') }}">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Riwayat</span></a>
+          </li>
+          <li class="nav-item {{ Request::path() === 'Administrator/kategori' ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages">
+              <i class="fas fa-fw fa-folder"></i>
+              <span>Rekap </span>
+            </a>
+            <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('rekap.tahun') }}">Rekap Tahun</a>
+              
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
         @endcan
        
         <li class="nav-item">
@@ -196,7 +195,7 @@
            <button class="rounded-circle border-0" id="sidebarToggle"></button>
          </div>
    
-       </ul>
+</ul>
        <!-- End of Sidebar -->
         @endif
       

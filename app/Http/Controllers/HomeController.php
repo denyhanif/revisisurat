@@ -334,7 +334,7 @@ class HomeController extends Controller
                         'alasan_pindah'=>$request['alasan_pindah'],
                           'desa' => $request['desa'],
                           'kecamatan' => $request['kecamatan'],
-                          'kab' => $request['kab'],
+                          'kabupaten' => $request['kab'],
                           'provinsi' => $request['provinsi'],
                           'kodepos' => $request['kodepos'],
                           'nik_pemohon' => $request['nik_pemohon'],
@@ -534,7 +534,7 @@ class HomeController extends Controller
                         ->select('data_kematian.*','nama_pemesan','nomer_surat')
                         ->first(); 
                 //return view('suratkematian');
-                $pdf = PDF::loadview('suratkematian', compact('pengajuan','kategori'))->setPaper('a4', 'portrait');
+                $pdf = PDF::loadview('suratkematian', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
                 return $pdf->stream();
                 break;
             //pengantar umum
@@ -787,7 +787,7 @@ class HomeController extends Controller
             'is_ambil' => true,
         ]);
 
-        return redirect()->back()->with(['success' => 'DataDiambil']);
+        return redirect()->back()->with(['success' => 'Data Diambil']);
     }
     
     public function reset(){

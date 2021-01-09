@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('warga.login');
 });
+// Route::get('/login', function () {
+//     return view('warga.login');
+// });
 
 Route::get('/template','kategoriSuratController@test')->name('revisi');
 
@@ -28,6 +31,7 @@ Auth::routes([
   ]);
 
 Route::group(['prefix' => 'Administrator', 'middleware' =>'auth'], function () {
+    
     Route::resource('home', 'HomeController');
     Route::resource('kategori', 'kategoriSuratController');
     Route::get('kategori/data/{id}','kategoriSuratController@data')->name('kategori.data');//  m
