@@ -398,19 +398,13 @@ class dataPengajuanController extends Controller
         $kode= $kategori->kode_surat;
         $ids= $kategori->id;
         //dd($kode);
-
-
         $pesanan = Pesanan::create([
             'data_pengajuan_id' => $pengajuan->id,
             // 'nomer_surat' => $no_surat.'/'.$pengajuan->id,
             // $kode.'/ '.'Kec.Ngemplak'. '/'. $ids.' /' . tgl_romawi(Carbon::now()->format('m')).'/'. Carbon::now()->format('Y'),
             'tanggal_pesan' => now(),
         ]);
-
         return redirect('/Administrator/list-kategori/'.$kat);
-        
-
-
     }
 
     /**
@@ -473,14 +467,10 @@ class dataPengajuanController extends Controller
         ]);
         // $idpesan = $request->id_pesanan;
         // $idpengaju = $request->id_pengaju;
-        
-        
         // dd('berhasil');
         $pengajuan->pesanan->update([
             'tanggal_verifikasi' => now(),
-            'status' => 1,
-        
-            
+            'status' => 1,     
         ]);
 
 

@@ -39,6 +39,7 @@ class WargaController extends Controller
         $kategori = $request['id_kategori'];
         switch ($kategori) {
             case ('1'):
+              //dd($kategori);
                 return view('warga.form.kelahiranForm',compact('kategori'));
               break;
             case ('2'):
@@ -381,7 +382,7 @@ class WargaController extends Controller
         ]);
 
       
-        return redirect(route('warga.dashboard'));
+        return redirect(route('warga.riwayat'));
 
     }
 
@@ -398,6 +399,7 @@ class WargaController extends Controller
     }
 
     public function labelPengajuan(KategoriSurat $id){
+      //menampilkan kolom surat dinamis
         $view = View::make('admin.kategori.load')->with('kategori',$id)->render();
         return response()->json(['view'=>$view],200);
 

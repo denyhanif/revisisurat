@@ -34,7 +34,7 @@ Route::group(['prefix' => 'Administrator', 'middleware' =>'auth'], function () {
     
     Route::resource('home', 'HomeController');
     Route::resource('kategori', 'kategoriSuratController');
-    Route::get('kategori/data/{id}','kategoriSuratController@data')->name('kategori.data');//  m
+    //Route::get('kategori/data/{id}','kategoriSuratController@data')->name('kategori.data');//  m
     Route::resource('pengajuan', 'dataPengajuanController');
     Route::post('/form-pengajuan', 'dataPengajuanController@pilihSurat')->name('form-surat-admin');
     Route::get('/pengajuan/{id}', 'dataPengajuanController@index')->name('list.kategori.pengajuan');
@@ -50,7 +50,7 @@ Route::group(['prefix' => 'Administrator', 'middleware' =>'auth'], function () {
     Route::get('/verifikasi-pengantar-datang/{id}', 'HomeController@verifSuratPindahDatangWNI')->name('verifikasi-datang');
     Route::get('/verifikasi-permohonan-pindah-datang-WNI/{id}', 'HomeController@verifPermohonanDatang')->name('verifikasi-permohonan-datang');
 
-    Route::get('/list-kategori/data/{pesanan}', 'HomeController@listdatakategori')->name('list.kategori.data');
+    //Route::get('/list-kategori/data/{pesanan}', 'HomeController@listdatakategori')->name('list.kategori.data');
     Route::get('/cekpesanan','HomeController@cekPesanan')->name('cek.pesanan');
     Route::get('/list-pegawai', 'HomeController@admin')->name('admin.index');
     Route::post('/verifikasi', 'HomeController@verifikasi')->name('send.verifikasi');

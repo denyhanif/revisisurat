@@ -44,11 +44,15 @@ class HomeController extends Controller
 
     public function listkategori($id)
     {
+        $kat = $id;
         $pengajuan = DataPengajuan::where('kategori_surat_id', $id)->orderBy('created_at', 'DESC')->get();
         //dd($pengajuan);
         $title = KategoriSurat::find($id);
-        $kat = $id;
+        
+        
         return view('admin.dashboard.listkategori', compact('pengajuan', 'title','kat'));
+        
+
     }
 
     public function verifKelahiran($id)
@@ -58,7 +62,7 @@ class HomeController extends Controller
                         ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
                         ->where('data_pengajuans.id', $id)
                         ->select('data_kelahiran.*','data_kelahiran.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
-                        ->first();              
+                        ->first();
         return view('admin.dashboard.verifLahir', compact('data'));
     }
     public function verifKematian($id)
@@ -84,11 +88,12 @@ class HomeController extends Controller
     public function verifPengantarPindah($id)
     {
         $data = DB::table('data_pengajuans')
-                        ->join('data_pengantar_pindah', 'data_pengajuans.data','=','data_pengantar_pindah.id')
-                        ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')
+                        ->join('data_pengantar_pindah', 'data_pengajuans.data','=','data_pengantar_pindah.id')//('tabel1','tabel2.fkTabel2',=,'Tabel1.pk')
+                        ->join('pesanans','data_pengajuans.id','=','pesanans.data_pengajuan_id')//('tabel1','tabel2pk',=,'tabel1.fk'
                         ->where('data_pengajuans.id', $id)
                         ->select('data_pengantar_pindah.*','data_pengantar_pindah.id AS data_id','data_pengajuans.id AS pengajuan_id','pesanans.id AS pesanan_id','data_pengajuans.kategori_surat_id AS halaman','nama_pemesan')
-                        ->first();              
+                        ->first();
+        //dd($data);              
         return view('admin.dashboard.verifPindah', compact('data'));
     }
     public function verifPermohonanPindah($id)
@@ -156,20 +161,19 @@ class HomeController extends Controller
 
     public function riwayat()
     {
-        $pengajuan = DataPengajuan::with(['kategori', 'pesanan'])->orderBy('created_at', 'DESC')->paginate(10);
-        //dd($pengajuan);
+        $pengajuan = DataPengajuan::with(['kategori', 'pesanan'])->orderBy('created_at', 'DESC')->get();
         return view('admin.riwayat', compact('pengajuan'));
     }
 
     public function verifikasi(Request $request)
     {
         
-          $kat = $request['kat'];
+        $kat = $request['kat'];
         $kategori = KategoriSurat::find($kat);
         switch ($kat) {
             //kelahiran
             case ('1'):
-                 $no_surat = '472.11/'.$request->id_pesanan.'/'.'Umbulmartani//'.tgl_romawi(Carbon::now()->format('m')).'/'.Carbon::now()->format('Y');//tgl_romawi(Carbon::now()->format('m')).'/'. 
+                $no_surat = '472.11/'.$request->id_pesanan.'/'.'Umbulmartani//'.tgl_romawi(Carbon::now()->format('m')).'/'.Carbon::now()->format('Y');//tgl_romawi(Carbon::now()->format('m')).'/'. 
                 $update = DB::table('data_kelahiran') 
                             ->where('id', $request['id_data'])
                             ->update([
@@ -331,10 +335,10 @@ class HomeController extends Controller
                           'no_kk' => $request['no_kk'],
                           'nama_kk' => $request['nama_kk'],
                           'alamat' => $request['alamat'],
-                        'alasan_pindah'=>$request['alasan_pindah'],
+                          'alasan_pindah'=>$request['alasan_pindah'],
                           'desa' => $request['desa'],
                           'kecamatan' => $request['kecamatan'],
-                          'kabupaten' => $request['kab'],
+                          'kab' => $request['kab'],
                           'provinsi' => $request['provinsi'],
                           'kodepos' => $request['kodepos'],
                           'nik_pemohon' => $request['nik_pemohon'],
@@ -406,6 +410,7 @@ class HomeController extends Controller
                               'shdk' => $data['shdk'][$i],                            
                             ]); 
                   } 
+                  
               break;
             //permohonan pindah datang
             case ('7'):
@@ -449,7 +454,9 @@ class HomeController extends Controller
                               'shdk' => $data['shdk'][$i],                            
                             ]); 
                   }
+                  
               break;
+              
           }
         $idpesan = $request->id_pesanan;
         $idpengaju = $request->id_pengaju;
@@ -459,16 +466,11 @@ class HomeController extends Controller
         {
             Mail::to($pengajuan->warga->email)->send(new NotifVerifikasi($pengajuan));
         }
-
-        // dd('berhasil');
         $pesanan->update([
             'tanggal_verifikasi' => now(),
             'nomer_surat' => $no_surat,
-            'status' => 1,
-        
-            
+            'status' => 1, 
         ]);
-        
         return redirect('/Administrator/list-kategori/'.$request->kat);
         
     }
@@ -516,8 +518,10 @@ class HomeController extends Controller
                         ->where('data_pengajuans.id', $id)
                         ->select('data_kelahiran.*','nama_pemesan','nomer_surat')
                         ->first();
+                       
                 // $nomor = DB::table('pesanans')->where('data_pengjuan.id',$id)->select('nomor_surat'); 
                 $pdf = PDF::loadview('suratkelahiran', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
+                 //dd( $pengajuan);
                 return $pdf->stream();
                 break;
             //keterangan kematian

@@ -24,12 +24,7 @@
                             <option value="7">Formulir Permohonan Pindah Datang</option>
                         </select>
                     </div>
-                    
-                    {{-- <div class="form-group col-md-8">
-                        <label for="inputState">Nama Pemesan Surat</label>
-                        <input class="form-control" type="text" name="nama" >
-                    
-                    </div> --}}             
+                               
                     <div class="text-left mt-4 mb-4">
                         <button type="submit" class="btn btn-primary">Lanjut</button>
                     </div>

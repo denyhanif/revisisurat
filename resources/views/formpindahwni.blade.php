@@ -281,7 +281,7 @@
 
 
     </table>
-     <table align="left" border="" style=" margin-top:100px;padding-top:0px; ">
+     <table align="left" border="" style=" margin-top:10px;padding-top:0px; ">
     <tr><td height=""></td></tr>
     <tr style="">
         <td>Petugas Registrasi</td>

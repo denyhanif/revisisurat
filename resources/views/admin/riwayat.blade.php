@@ -45,9 +45,9 @@
             </tbody>
           </table>
 
-          <div class="text-center">
+          {{--  <div class="text-center">
               {{ $pengajuan->links() }}
-          </div>
+          </div>  --}}
     </div>
 </div>
 @endsection

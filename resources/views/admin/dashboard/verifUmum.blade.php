@@ -1,3 +1,4 @@
+{{--  {{ dd($data) }}  --}}
 @extends('layouts.master')
 
 @section('content')
@@ -17,7 +18,7 @@
                     <input hidden value="{{ $data->halaman }}" name="kat" >
                     <div class="form-group col-md-8">
                         <label for="inputState">Nama Pemesan Surat</label>
-                        <input class="form-control" type="text" name="nama_pemesan" value="{{ $data->nama_pemesan }}">
+                        <input class="form-control" type="text" name="nama_pemesan" value="{{ $data->nama_pemesan }}" readonly
                     </div>    
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Data Diri</h1>

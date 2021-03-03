@@ -45,10 +45,8 @@
                         $no =1;
                     @endphp
                     @forelse ($pengajuan as $row)
-                  
                         @if( $row->pesanan->is_ambil == 0)
-
-                                          <tr>
+                          <tr>
                                 <th scope="row">{{ $no++ }}</th>
                                 <td>{{ $row->nama_pemesan }}</td>
                                 <td>{{ $row->pesanan->tanggal_pesan }}</td>
@@ -105,7 +103,6 @@
                                 </td>
                               </tr>
                         @endif
-                    
                     @empty
                     <tr>
                         <td colspan="8">Belum Ada Data</td>

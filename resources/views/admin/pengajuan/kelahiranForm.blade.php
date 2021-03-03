@@ -73,7 +73,7 @@
                     </div>  
                     <div class="form-group col-md-6">
                         <label for="inputState">Penolong Kelahiran</label>
-                        <input class="form-control" type="text" name="pnlg_kelahiran" >
+                        <input class="form-control" type="text" name="pnlg_kelahiran" required >
                     </div>  
                     <div class="form-group col-md-6">
                         <label for="inputState">Berat Bayi (Dalam kg)</label>
@@ -164,27 +164,27 @@
                     </div> 
                     <div class="form-group col-md-6">
                         <label for="inputState">Nama Lengkap</label>
-                        <input class="form-control" type="text" name="pelapor_nm" >
+                        <input class="form-control" type="text" name="pelapor_nm" required >
                     </div>  
                     <div class="form-group col-md-6">
                         <label for="inputState">Tempat Lahir</label>
-                        <input class="form-control" type="text" name="pelapor_tmpt_lahir" >
+                        <input class="form-control" type="text" name="pelapor_tmpt_lahir" required >
                     </div> 
                     <div class="form-group col-md-6">
                         <label for="inputState">Tanggal Lahir</label>
-                        <input class="form-control" type="text" name="pelapor_tgl_lahir" >
+                        <input class="form-control" type="text" name="pelapor_tgl_lahir" required >
                     </div> 
                     <div class="form-group col-md-6">
                         <label for="inputState">Umur</label>
-                        <input class="form-control" type="number" name="pelapor_umur" >
+                        <input class="form-control" type="number" name="pelapor_umur" required >
                     </div> 
                     <div class="form-group col-md-6">
                         <label for="inputState">Pekerjaan</label>
-                        <input class="form-control" type="text" name="pelapor_pekerjaan" >
+                        <input class="form-control" type="text" name="pelapor_pekerjaan" required >
                     </div> 
                     <div class="form-group col-md-6">
                         <label for="inputState">Alamat</label>
-                        <input class="form-control" type="text" name="pelapor_almt" >
+                        <input class="form-control" type="text" name="pelapor_almt" required >
                     </div> 
                     <div class="form-group col-md-6">
                         <label for="inputState">Tanggal Lapor</label>
@@ -199,7 +199,7 @@
                                 <h1 class="h3 mb-0 text-gray-800 col-md-12">Data Saksi 1</h1>
                             <div class="form-group col-md-12">
                                 <label for="inputState">NIK</label>
-                                <input class="form-control" type="text" name="saksi1_nik" >
+                                <input class="form-control" type="text" name="saksi1_nik"  >
                             </div> 
                             <div class="form-group col-md-12">
                                 <label for="inputState">Nama Lengkap</label>

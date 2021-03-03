@@ -113,12 +113,12 @@
   
  
  <script>
-    function update(){
+    {{--  function update(){
       $.ajax({
               url: "{{ url('Administrator/cekpesanan') }}",
               method: 'get',
               success: function(data){
-                //$('#data-template-wrap').html(data.view)
+                
                   console.log(data);
                   current= $('body').data('jumlah');
                     if(current!=data.jumlah){
@@ -134,7 +134,7 @@
               
             });
     }
-    setInterval(update, 300);
+    setInterval(update, 300);  --}}
   </script>
   @yield('js')
 
