@@ -6,7 +6,7 @@ Kepada {{ $pengajuan->nama_pemesan }}
 </p>
 
 Pengajuan Surat <b>{{ $pengajuan->kategori->nama }}</b> Pengajuan surat Anda ditolak.
-
+dengan alasan <b>{{ $pengajuan->pesanan->alasan_tolak }}</b> 
 {{--  @component('mail::button', ['url' => ''])
 Button Text
 @endcomponent  --}}

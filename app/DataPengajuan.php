@@ -48,7 +48,7 @@ use Illuminate\Database\Eloquent\Model;
         }elseif ($this->pesanan->status == 3) {
             return '<span class="badge badge-danger">Ditolak</span>';
         }
-        return '<span class="badge badge-success">Selesai</span>';
+        return '<span class="badge badge-success">diambil</span>';
     }
 
 }

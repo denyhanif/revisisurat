@@ -25,15 +25,18 @@
     @endif
         <form method="get" action="{{ route('rekap.tahun')}}">
                     
-                    <div class=" row form-group col-md-4">
-                        <select name="tahun" id="tahun" class="form-control">
+        <div class=" row form-group">
+            <div class="col-md-4  ">
+                  <select name="tahun" id="tahun" class="form-control">
                             
                             <option selected value="all">Pilih Tahun</option>
                             @foreach ($tahun as $row)
                                 <option value="{{ $row }}">{{ $row }}</option>                           
                             @endforeach
-                        </select>
-                        <select name="bulan" id="bulan" class="form-control">
+            </select>
+            </div>
+            <div class="col-md-4 ">
+                <select name="bulan" id="bulan" class="form-control">
                             <option selected value="all">Pilih Bulan</option>
                                 <option value="01">Januari</option>
                                 <option value="02">Februari</option>
@@ -46,19 +49,15 @@
                                 <option value="09">September</option>
                                 <option value="10">oktober</option>
                                 <option value="11">november</option>
-                                <option value="12">Desember</option>
-                            
-                                
-                        </select>
-                    </div>
+                                <option value="12">Desember</option>                               
+            </select>
+            </div>           
+        </div>
 
-                    <div class="form-group col-md-4">
-                        
-                    </div>
+                   
         </form>
-        <div class="row">
-            
-            <div class="col-md-12 card shadow mb-4">
+        <div class="row">           
+            <div class="col-md-12 card shadow ml-1 mb-4 pt-2">
                 <table class="table table-hover" id='table_id'>
                     <thead>
                     <tr>
@@ -101,7 +100,7 @@
             { data: "pesanan.nomer_surat" },
             { data: "pesanan.tanggal_jadi" },
                 ],
-            "ajax" : {
+                "ajax" : {
                 url:"/Administrator/rekap-data",
                 type:"POST",
                 data:{

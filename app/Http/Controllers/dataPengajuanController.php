@@ -248,8 +248,8 @@ class dataPengajuanController extends Controller
               break;
             //permohonan pindah
             case ('5'):
+              //dd($request->all());
                          //   $no_surat = '472.11';
-
               $db = DB::table('data_permohonan_pindah') 
                         ->insert([
                           'no_kk' => $request['no_kk'],
@@ -395,8 +395,8 @@ class dataPengajuanController extends Controller
                     
         ]);
         
-        $kode= $kategori->kode_surat;
-        $ids= $kategori->id;
+        //$kode= $kategori->kode_surat;
+        //$ids= $kategori->id;
         //dd($kode);
         $pesanan = Pesanan::create([
             'data_pengajuan_id' => $pengajuan->id,

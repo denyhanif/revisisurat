@@ -19,7 +19,7 @@
                     <hr/>
                     <h1 class="h3 mb-0 text-gray-800">Data Daerah Asal</h1>
                     <div class="row">
-                                            <div class="form-group col-md-6">
+                    <div class="form-group col-md-6">
                         <label for="inputState">Nomor Kartu Keluarga</label>
                         <input class="form-control" type="text" name="no_kk" >
                     </div>  

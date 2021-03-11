@@ -167,7 +167,7 @@ class HomeController extends Controller
 
     public function verifikasi(Request $request)
     {
-        
+        //dd($request->all());
         $kat = $request['kat'];
         $kategori = KategoriSurat::find($kat);
         switch ($kat) {
@@ -494,6 +494,7 @@ class HomeController extends Controller
     
         $pesanan->update([
             'status'=>3,
+            'alasan_tolak'=>$request['alasantolak']
         ]);
 
         return redirect('/Administrator/list-kategori/'.$request->kat);
@@ -518,7 +519,9 @@ class HomeController extends Controller
                         ->where('data_pengajuans.id', $id)
                         ->select('data_kelahiran.*','nama_pemesan','nomer_surat')
                         ->first();
-                       
+                //return response()->json();
+                //dd(json_decode($pengajuan));
+                
                 // $nomor = DB::table('pesanans')->where('data_pengjuan.id',$id)->select('nomor_surat'); 
                 $pdf = PDF::loadview('suratkelahiran', compact('pengajuan','kategori'))->setPaper('f4', 'portrait');
                  //dd( $pengajuan);
@@ -756,15 +759,13 @@ class HomeController extends Controller
         
         $pengajuan = DataPengajuan::orderBy('created_at','ASC')->get()->groupBy(function($item){
             return $item->created_at->format('Y');
-        });
+        });//get Year
         $tahun=(array_keys($pengajuan->toArray()));
         //$filtertahun= $request->get('tahun');
         //$filterbulan= $request->get('bulan');
         // if($filtertahun){
         //     $dataPenhajuan= DataPengajuan::where('created_at',$filtertahun)->paginate(10);
         // }
-
-
         return view('admin.rekap.rekapTahun', compact('tahun'));
 
     }
@@ -777,6 +778,7 @@ class HomeController extends Controller
         if($request->bulan != 'all'){
             $pengajuan= $pengajuan->whereMonth('created_at',$request->bulan);
         }
+        // dd($pengajuan);
 
         return Datatables::of($pengajuan)->make();
         
@@ -789,6 +791,8 @@ class HomeController extends Controller
         // dd('berhasil');
         $pengajuan->pesanan->update([
             'is_ambil' => true,
+            'status'=>4,
+            'tanggal_ambil'=> now()
         ]);
 
         return redirect()->back()->with(['success' => 'Data Diambil']);

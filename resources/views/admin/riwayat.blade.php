@@ -18,7 +18,9 @@
                 <th scope="col">Nama</th>
                 <th scope="col">Jenis Surat</th>
                 <th scope="col">Tanggal Jadi</th>
+                <th scope="col" >Tanggal Ambil</th>
                 <th scope="col">Status</th>
+                
                 <th> action </th>
                 
               </tr>
