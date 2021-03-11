@@ -386,9 +386,30 @@ class WargaController extends Controller
 
     }
 
-    public function riwayat()
+    public function riwayat(Request $request)
     {
-        $pengajuan = DataPengajuan::where('warga_id', Auth::guard('warga')->id())->orderBy('created_at', 'DESC')->paginate(10);
+       
+        
+        $pengajuan = DataPengajuan::with(['kategori','pesanan','warga'])->where('warga_id', Auth::guard('warga')->id())->orderBy('created_at', 'DESC')->paginate(10);
+
+         
+
+        return view('warga.riwayat',compact('pengajuan'));
+    }
+    public function filter(Request $request){
+
+        //$pengajuan = DataPengajuan::with(['kategori','pesanan','warga'])->where('warga_id', Auth::guard('warga')->id())->orderBy('created_at', 'DESC')->get();
+        $status= $request->get('status');
+        if($status == 'all'){
+          $pengajuan = DataPengajuan::with(['kategori','pesanan','warga'])->where('warga_id', Auth::guard('warga')->id())->orderBy('created_at', 'DESC')->paginate(10);
+        }else{
+          $pengajuan = DataPengajuan::with(['kategori','pesanan','warga'])->where('warga_id', Auth::guard('warga')->id())->
+              whereHas('pesanan',function($pesanan)use($status){
+                $pesanan->where('status',$status);
+              }
+              )->paginate(10);
+        }
+        
         return view('warga.riwayat',compact('pengajuan'));
     }
     

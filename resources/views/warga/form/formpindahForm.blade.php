@@ -61,7 +61,7 @@
                         </div>  
                         <div class="form-group col-md-6">
                             <label for="inputState">Tanggal Lahir</label>
-                            <input class="form-control" type="text" name="tgl_lahir" required>
+                            <input class="form-control" type="date" name="tgl_lahir" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputState">Nama Lengkap</label>

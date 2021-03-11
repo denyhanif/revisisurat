@@ -88,6 +88,7 @@ Route::group(['prefix' => 'member', 'namespace' => 'Warga'], function() {
         Route::post('/form-pengajuan', 'WargaController@pilihSurat')->name('form-surat');
         Route::get('home', 'WargaController@home')->name('warga.home');
         Route::get('logout', 'WargaController@logout')->name('warga.logout');
+        Route::get('riwayat/filter', 'WargaController@filter')->name('warga.filter');
         Route::post('pengajuan', 'WargaController@pengajuanstore')->name('warga.pengajuan.store');
         Route::get('riwayat', 'WargaController@riwayat')->name('warga.riwayat');
         Route::get('kategori/data/{id}','WargaController@labelPengajuan')->name('load.kategori.data');//  m

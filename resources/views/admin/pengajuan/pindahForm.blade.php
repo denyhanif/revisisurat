@@ -33,7 +33,7 @@
                     </div>    
                     <div class="form-group col-md-6">
                         <label for="inputState">Tanggal Lahir</label>
-                        <input class="form-control" type="text" name="tgl_lahir" >
+                        <input class="form-control" type="date" name="tgl_lahir" >
                     </div>         
                     <div class="form-group col-md-6">
                         <label for="inputState">Nomor Kartu Keluarga</label>

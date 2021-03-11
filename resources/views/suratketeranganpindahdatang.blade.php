@@ -184,7 +184,7 @@
           <tr>
             <td style="width: 150px" >5.Tempat/Tanggal lahir</td>
             <td id="data">: {{ $pengajuan->tmpt_lahir }}</td>
-            <td>/ {{ $pengajuan->tgl_lahir }}</td>
+            <td>/ {{ tgl_indo(Carbon\Carbon::parse($pengajuan->tgl_lahir)->format('Y-m-d'))}} </td>
         </tr>
         <tr>
             <td style="width: 200px" >6. Nama Lengkap Pemohon</td>
@@ -215,7 +215,8 @@
         </tr>
         <tr>
             <td style="width: 150px" >5.Tanggal Kedatangan</td>
-            <td id="data">: {{ $pengajuan->tgl_datang }}</td>
+            <td id="data">: {{ tgl_indo(Carbon\Carbon::parse($pengajuan->tgl_datang)->format('Y-m-d'))}}</td>
+           
         </tr>
         <tr>
             <td style="width: 150px" >6. Alamat yang Dituju</td>

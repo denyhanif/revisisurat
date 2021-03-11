@@ -6,23 +6,26 @@
   <h1 class="h3 mb-0 text-gray-800">Riwayat</h1>
 </div>
 <div class="row">
-    <div class="col-md-6 card shadow m-1">
-      <div class="row">
-        <div class="form-group col-md-6">
-            <select name="agama" class="form-control mt-2 mb-1">
-                <option selected>Filter Status</option>
-                <option value="0">Proses</option>
-                <option value="1">Verifikasi</option>
-                <option value="2">Jadi</option>
-                <option value="3">Tolak</option>
-                <option value="4">Ambil</option>
-            </select>
+    <div class="col-md-5 card shadow m-1">
+      <form action="{{ route('warga.filter') }}" method="GET">
+        <div class="row">
+        
+            <div class="form-group col-md-10 m-0">
+                <select name="status" class="form-control mt-2 mb-2">
+                    <option selected value="all">semua</option>
+                    <option value="0">Proses</option>
+                    <option value="1">Verifikasi</option>
+                    <option value="2">Jadi</option>
+                    <option value="3">Tolak</option>
+                    <option value="4">Ambil</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2 m-0 p-2">
+              <button class="btn btn-success btn-md " type="submit"> cari</button>
+                
+            </div>              
         </div>
-        <div class="form-group col-md-3">
-            <button class="btn btn-info btn-sm  mt-2 mb-1">cari</button>
-        </div>
-      </div>
-      
+      </form>
     </div>
     <div class="col-md-12 card shadow ml-1 mr-1 mb-4">
         <table class="table table-responsive-sm table-striped p-0 text-small ">

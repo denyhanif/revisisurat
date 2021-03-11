@@ -36,7 +36,7 @@
                     </div>    
                     <div class="form-group col-md-6">
                         <label for="inputState">Tanggal Lahir</label>
-                        <input class="form-control" type="text" name="tgl_lahir" value="{{ $data->tgl_lahir }}">
+                        <input class="form-control" type="date" name="tgl_lahir" value="{{ $data->tgl_lahir }}">
                     </div>         
                     <div class="form-group col-md-6">
                         <label for="inputState">Nomor Kartu Keluarga</label>
@@ -87,16 +87,34 @@
                     <hr>
                     <div class="text-left mt-4 mb-4">
                         <button type="submit" class="btn btn-primary">Verifikasi</button>
+                        <button type="button" class="btn btn-danger btn-md  ml-5" data-toggle="modal" data-target="#myModal">Tolak</button>
+                       
                     </div>
             </form>
-            <form class="mt-3 mb-2" action="{{ route('tolak') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <input hidden value="{{ $data->halaman }}" name="kat" >
-                <input hidden value="{{ $data->pesanan_id }}" name="idpesantolak" >
-                <div class="text-left mb-4">
-                    <button type="submit" class="btn btn-danger">Tolak</button>
-                </div>
+            
+        </div>
+    </div>
+    {{--  modal  --}}
+        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+        <!-- Modal content-->
+        <div class="modal-content p-3">
+            <form class="mt-1 mb-1 "  action="{{ route('tolak') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <h4 class="modal-title">Tolak Pesanan</h4>
+                    <input hidden value="{{ $data->halaman }}" name="kat" >
+                    <input hidden value="{{ $data->pesanan_id }}" name="idpesantolak" >
+                    <div class="modal-body">
+                    <input type="text" class="form-control" name="alasantolak" placeholder="tambahkan alasan" >
+                    </div>
+                    <div class="modal-footer">
+                    <button type="submit" class="btn btn-sm btn-danger">Tolak</button>
+                    <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">Close</button>
+                    </div>  
             </form>
+        </div>
+        
         </div>
     </div>
 @endsection
