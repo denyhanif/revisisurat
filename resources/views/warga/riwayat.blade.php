@@ -11,10 +11,11 @@
         <div class="form-group col-md-6">
             <select name="agama" class="form-control mt-2 mb-1">
                 <option selected>Filter Status</option>
-                <option value="1">Islam</option>
-                <option value="2">Katholik</option>
-                <option value="3">Kristen</option>
-                <option value="4">Hindhu</option>
+                <option value="0">Proses</option>
+                <option value="1">Verifikasi</option>
+                <option value="2">Jadi</option>
+                <option value="3">Tolak</option>
+                <option value="4">Ambil</option>
             </select>
         </div>
         <div class="form-group col-md-3">
