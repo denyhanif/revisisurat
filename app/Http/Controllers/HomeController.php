@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Mail;
 use PDF;
 use Illuminate\Support\Facades\View;
 use Carbon\Carbon;
+use Auth;
 
 
 class HomeController extends Controller
@@ -29,17 +30,47 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+         
     }
 
     public function index()
     {
         $kategori = KategoriSurat::get();
-        // dd($kategori->first()->pengajuan()->whereHas('pesanan',function($q){
-        //     return $q->where('status',0);
-        // })->get());
+        
+        $Totalpesanan = Pesanan::all()->count();
+        $pengajuan = DataPengajuan::all()->count();
+
+        $a = DataPengajuan::where('kategori_surat_id',1)->count();
+        $b = DataPengajuan::where('kategori_surat_id',2)->count();
+        $c = DataPengajuan::where('kategori_surat_id',3)->count();
+        $d = DataPengajuan::where('kategori_surat_id',4)->count();
+        $e = DataPengajuan::where('kategori_surat_id',5)->count();
+        $f = DataPengajuan::where('kategori_surat_id',6)->count();
+        $g = DataPengajuan::where('kategori_surat_id',7)->count();
+
+        $bar= [$a,$b,$c,$d,$e,$f,$g];
+        $p = count($bar);
+        $barmax = max($bar);
+        
+        $max= $Totalpesanan / ($p/2);
+        $bar1 = json_encode($bar);
+        //dd($bar);
+       //satatus
+        $a = Pesanan::where('status',0)->count();
+        $b = Pesanan::where('status',1)->count();
+        $c = Pesanan::where('status',2)->count();
+        $d = Pesanan::where('status',3)->count();
+        $e = Pesanan::where('status',4)->count();
+        $pie = [$a,$b,$c,$d,$e];
+       
+        $fixpie = json_encode($pie); 
 
         
-        return view('admin.dashboard.index', compact('kategori'));
+        return view('admin.dashboard.index', compact('kategori','Totalpesanan','bar1','max','fixpie','barmax'));
+    }
+    public function dashboardKades(){
+         $kategori = KategoriSurat::get();
+        return view('admin.dashboard.dashboardKades', compact('kategori'));
     }
 
     public function listkategori($id)

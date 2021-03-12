@@ -36,6 +36,7 @@
                   <td>{{ $row->nama_pemesan }}</td>
                   <td>{{ $row->kategori->nama }}</td>
                   <td>{{ $row->tanggal_jadi() }}</td>
+                  <td>{{ $row->pesanan->tanggal_ambil }}</td>
                   <td>{!! $row->status_label !!}</td>
                   <td>  <a class="btn btn-primary fa fa-eye" href="{{ route('print.surat', $row->id) }}"></a> </td>
                 </tr>

@@ -107,7 +107,7 @@
         </tr>
         <tr>
             <td style="width: 150px">c. Tempat,tgl. lahir</td>
-            <td>: {{ $pengajuan->tempat_lahir }} / {{ $pengajuan->tgl_lahir }}</td>
+            <td>: {{ $pengajuan->tempat_lahir }} /  {{ \Carbon\Carbon::parse($pengajuan->tgl_lahir)->format('d-m-Y')}} </td>
         </tr>
         <tr>
             <td style="width: 150px">d. Jenis kelamin</td>

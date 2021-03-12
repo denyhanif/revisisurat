@@ -318,7 +318,7 @@
    <table align="right" border="" style=" ">
     <tr><td height=""></td></tr>
     <tr style="">
-        <td>Umbulmartani, 20/Desember/2020 </td>
+        <td>Umbulmartani, {{ tgl_indo(Carbon\Carbon::parse(now())->format('Y-m-d')) }}</td>
     </tr>
     <tr align="center">
         <td>Pemohon</td>

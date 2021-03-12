@@ -118,7 +118,7 @@
         </tr>
          <tr>
             <td style="" >3.Tempat Tanggal Lahir</td>
-            <td id="data">: {{ $pengajuan->tempat_lahir }},   {{ $pengajuan->tgl_lahir }}</td>
+            <td id="data">: {{ $pengajuan->tempat_lahir }},  {{ tgl_indo(Carbon\Carbon::parse($pengajuan->tgl_lahir)->format('Y-m-d'))}}  </td>
             
         </tr>
          <tr>

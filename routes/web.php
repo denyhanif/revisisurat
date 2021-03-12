@@ -29,9 +29,9 @@ Auth::routes([
     'reset' => false, 
     'verify' => false, 
   ]);
-
+ 
 Route::group(['prefix' => 'Administrator', 'middleware' =>'auth'], function () {
-    
+   
     Route::resource('home', 'HomeController');
     Route::resource('kategori', 'kategoriSuratController');
     //Route::get('kategori/data/{id}','kategoriSuratController@data')->name('kategori.data');//  m
@@ -40,6 +40,8 @@ Route::group(['prefix' => 'Administrator', 'middleware' =>'auth'], function () {
     Route::get('/pengajuan/{id}', 'dataPengajuanController@index')->name('list.kategori.pengajuan');
 
     Route::get('/riwayat', 'HomeController@riwayat')->name('riwayat.pengajuan');
+    Route::get('/dashboard-kades', 'HomeController@dashboardKades')->name('dashboard-kades');
+
     Route::get('/list-kategori/{id}', 'HomeController@listkategori')->name('list.kategori');
 
     Route::get('/verifikasi-kelahiran/{id}', 'HomeController@verifKelahiran')->name('verifikasi-lahir');

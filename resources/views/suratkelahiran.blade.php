@@ -137,7 +137,7 @@
             </tr>
             <tr>
                 <td>6. Hari/Tgl,Bln</td>
-                <td>: {{ $pengajuan->hari_lahir }} / {{ $pengajuan->tgl_lahir }}</td>
+                <td>: {{ $pengajuan->hari_lahir }} /  {{ \Carbon\Carbon::parse($pengajuan->tgl_lahir )->format('d-m-Y')}} </td>
             </tr>
             <tr>
                 <td>7. Waktu/Jam Kelahiran</td>

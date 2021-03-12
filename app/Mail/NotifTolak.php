@@ -30,6 +30,6 @@ class NotifTolak extends Mailable
     public function build()
     {
         return $this->markdown('email.tolak')
-                    ->with('pengajuan', $this->pengajuan);;
+                    ->with(['pengajuan'], $this->pengajuan);;
     }
 }

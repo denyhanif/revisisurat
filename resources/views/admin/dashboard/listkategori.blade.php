@@ -49,19 +49,19 @@
                           <tr>
                                 <th scope="row">{{ $no++ }}</th>
                                 <td>{{ $row->nama_pemesan }}</td>
-                                <td>{{ $row->pesanan->tanggal_pesan }}</td>
+                                <td>{{ \Carbon\Carbon::parse($row->pesanan->tanggal_pesan)->format('d-m-Y')}}  </td>
                                 <td>
                                     @if ($row->pesanan->tanggal_verifikasi == null)
                                         {{ 'belum diverifikasi' }}
                                     @else
-                                        {{ $row->pesanan->tanggal_verifikasi }}
+                                        {{ \Carbon\Carbon::parse($row->pesanan->tanggal_verifikasi)->format('d-m-Y')}}
                                     @endif
                                 </td>
                                 <td>
                                   @if ($row->pesanan->tanggal_jadi == null)
                                   {{ 'belum jadi' }}
                                 @else
-                                  {{ $row->pesanan->tanggal_jadi }}
+                                  {{ \Carbon\Carbon::parse($row->pesanan->tanggal_jadi)->format('d-m-Y')}}
                                 @endif
                                 </td>
                                 <td>{{ $row->pesanan->nomer_surat }}</td>

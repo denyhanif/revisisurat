@@ -27,9 +27,6 @@
     
           <!-- Divider -->
           <hr class="sidebar-divider">
-  
-        
-  
         <!-- Tambah Pengajuan -->
         <li class="nav-item {{ Request::path() === 'Administrator/pengajuan/create' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('pengajuan.create') }}">

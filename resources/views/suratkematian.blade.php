@@ -104,7 +104,7 @@
             </tr>
             <tr>
                 <td>10. Meninggal Hari/Tanggal</td>
-                <td>: {{ $pengajuan->meninggal_tgl }}{{ $pengajuan->hari_meninggal }}</td>
+                <td>:  {{ $pengajuan->hari_meninggal }} / {{ \Carbon\Carbon::parse($pengajuan->meninggal_tgl)->format('d-m-Y')}}</td>
             </tr>
             <tr>
                 <td>11. Tempat Meninggal</td>
