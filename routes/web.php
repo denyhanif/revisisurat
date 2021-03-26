@@ -33,6 +33,7 @@ Auth::routes([
 Route::group(['prefix' => 'Administrator', 'middleware' =>'auth'], function () {
    
     Route::resource('home', 'HomeController');
+    Route::get('/home/filter', 'HomeController@filterchart')->name('dashboard.kades');
     Route::resource('kategori', 'kategoriSuratController');
     //Route::get('kategori/data/{id}','kategoriSuratController@data')->name('kategori.data');//  m
     Route::resource('pengajuan', 'dataPengajuanController');
@@ -93,6 +94,7 @@ Route::group(['prefix' => 'member', 'namespace' => 'Warga'], function() {
         Route::get('riwayat/filter', 'WargaController@filter')->name('warga.filter');
         Route::post('pengajuan', 'WargaController@pengajuanstore')->name('warga.pengajuan.store');
         Route::get('riwayat', 'WargaController@riwayat')->name('warga.riwayat');
+        Route::get('informasi-surat', 'WargaController@info')->name('warga.info');        
         Route::get('kategori/data/{id}','WargaController@labelPengajuan')->name('load.kategori.data');//  m
 
     });

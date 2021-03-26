@@ -38,7 +38,7 @@
                   <td>{{ $row->tanggal_jadi() }}</td>
                   <td>{{ $row->pesanan->tanggal_ambil }}</td>
                   <td>{!! $row->status_label !!}</td>
-                  <td>  <a class="btn btn-primary fa fa-eye" href="{{ route('print.surat', $row->id) }}"></a> </td>
+                  <td>  <a class="btn btn-primary fa fa-eye" target="_blank" href="{{ route('print.surat', $row->id) }}"></a> </td>
                 </tr>
                 @empty
                     <tr>

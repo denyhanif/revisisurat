@@ -33,6 +33,9 @@ class WargaController extends Controller
 
         return view('warga.homewarga');
     }
+    public function info(){
+      return view('warga.info');
+    }
 
     public function pilihSurat(Request $request)
     {
@@ -400,6 +403,7 @@ class WargaController extends Controller
 
         //$pengajuan = DataPengajuan::with(['kategori','pesanan','warga'])->where('warga_id', Auth::guard('warga')->id())->orderBy('created_at', 'DESC')->get();
         $status= $request->get('status');
+        //dd($request->all());
         if($status == 'all'){
           $pengajuan = DataPengajuan::with(['kategori','pesanan','warga'])->where('warga_id', Auth::guard('warga')->id())->orderBy('created_at', 'DESC')->paginate(10);
         }else{

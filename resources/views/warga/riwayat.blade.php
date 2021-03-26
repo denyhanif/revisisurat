@@ -37,6 +37,7 @@
                 <th scope="col">Tanggal Pesan</th>
                 <th scope="col">Tanggal Verifikasi</th>
                 <th scope="col">Tanggal Jadi</th>
+                <th scope="col">Tanggal Ambil</th>
                 <th scope="col">Status</th>              
                 <th scope="col"> Keterangan</th>
                  <th scope="col"> File</th>
@@ -62,6 +63,7 @@
                     @endif
                   </td>
                   <td>{{ $row->tanggal_jadi() }}</td>
+                  <td>{{ $row->pesanan->tanggal_ambil }}</td>
                   <td>
                     {!! $row->status_label !!}</td>
                     <td>{{ $row->pesanan->alasan_tolak }}</td>

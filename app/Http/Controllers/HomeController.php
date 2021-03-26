@@ -37,9 +37,53 @@ class HomeController extends Controller
     {
         $kategori = KategoriSurat::get();
         
+        $Totalpesanan = Pesanan::whereYear('created_at',now())->count();
+        $pengajuan = DataPengajuan::all()->count();
+
+        $a = DataPengajuan::where('kategori_surat_id',1)->whereYear('created_at',now())->count();
+        $b = DataPengajuan::where('kategori_surat_id',2)->whereYear('created_at',now())->count();
+        $c = DataPengajuan::where('kategori_surat_id',3)->whereYear('created_at',now())->count();
+        $d = DataPengajuan::where('kategori_surat_id',4)->whereYear('created_at',now())->count();
+        $e = DataPengajuan::where('kategori_surat_id',5)->whereYear('created_at',now())->count();
+        $f = DataPengajuan::where('kategori_surat_id',6)->whereYear('created_at',now())->count();
+        $g = DataPengajuan::where('kategori_surat_id',7)->whereYear('created_at',now())->count();
+        $bar= [$a,$b,$c,$d,$e,$f,$g];     
+        $p = count($bar);
+        $barmax = max($bar);    
+        $max= $Totalpesanan / ($p/2);
+        $bar1 = json_encode($bar);
+
+        $pengajuan = DataPengajuan::orderBy('created_at','ASC')->get()->groupBy(function($item){
+            return $item->created_at->format('Y');
+        });//get Year
+        $tahun=(array_keys($pengajuan->toArray()));
+        //dd($bar);
+       //satatus bar2
+        $a = Pesanan::where('status',0)->whereYear('created_at',now())->count();
+        $b = Pesanan::where('status',1)->whereYear('created_at',now())->count();
+        $c = Pesanan::where('status',2)->whereYear('created_at',now())->count();
+        $d = Pesanan::where('status',3)->whereYear('created_at',now())->count();
+        $e = Pesanan::where('status',4)->whereYear('created_at',now())->count();
+        $pie = [$a,$b,$c,$d,$e];
+       
+        $fixpie = json_encode($pie);
+        $bar2max  = max($pie); 
+    
+
+        
+        return view('admin.dashboard.index', compact('kategori','tahun','Totalpesanan','bar1','max','fixpie','barmax','bar2max'));
+    }
+
+    public function filterchart(Request $request){
+        $tahun = $request->get('tahun');
+        dd($tahun);
+        $kategori = KategoriSurat::get();
+        
         $Totalpesanan = Pesanan::all()->count();
         $pengajuan = DataPengajuan::all()->count();
 
+        if($tahun=== 'semua'){
+        
         $a = DataPengajuan::where('kategori_surat_id',1)->count();
         $b = DataPengajuan::where('kategori_surat_id',2)->count();
         $c = DataPengajuan::where('kategori_surat_id',3)->count();
@@ -47,15 +91,13 @@ class HomeController extends Controller
         $e = DataPengajuan::where('kategori_surat_id',5)->count();
         $f = DataPengajuan::where('kategori_surat_id',6)->count();
         $g = DataPengajuan::where('kategori_surat_id',7)->count();
-
-        $bar= [$a,$b,$c,$d,$e,$f,$g];
+        $bar= [$a,$b,$c,$d,$e,$f,$g];     
         $p = count($bar);
-        $barmax = max($bar);
-        
+        $barmax = max($bar);    
         $max= $Totalpesanan / ($p/2);
         $bar1 = json_encode($bar);
         //dd($bar);
-       //satatus
+       //satatus bar2
         $a = Pesanan::where('status',0)->count();
         $b = Pesanan::where('status',1)->count();
         $c = Pesanan::where('status',2)->count();
@@ -63,10 +105,43 @@ class HomeController extends Controller
         $e = Pesanan::where('status',4)->count();
         $pie = [$a,$b,$c,$d,$e];
        
-        $fixpie = json_encode($pie); 
-
+        $fixpie = json_encode($pie);
+        $bar2max  = max($pie); }
+        else{
+            
+        $a = DataPengajuan::where('kategori_surat_id',1)->whereYear('created_at',$request->tahun)->count();
+        $b = DataPengajuan::where('kategori_surat_id',2)->whereYear('created_at',$request->tahun)->count();
+        $c = DataPengajuan::where('kategori_surat_id',3)->whereYear('created_at',$request->tahun)->count();
+        $d = DataPengajuan::where('kategori_surat_id',4)->whereYear('created_at',$request->tahun)->count();
+        $e = DataPengajuan::where('kategori_surat_id',5)->whereYear('created_at',$request->tahun)->count();
+        $f = DataPengajuan::where('kategori_surat_id',6)->whereYear('created_at',$request->tahun)->count();
+        $g = DataPengajuan::where('kategori_surat_id',7)->whereYear('created_at',$request->tahun)->count();
+        $bar= [$a,$b,$c,$d,$e,$f,$g];     
+        $p = count($bar);
+        $barmax = max($bar);    
         
-        return view('admin.dashboard.index', compact('kategori','Totalpesanan','bar1','max','fixpie','barmax'));
+        $bar1 = json_encode($bar);
+        
+        $pengajuan = DataPengajuan::orderBy('created_at','ASC')->get()->groupBy(function($item){
+            return $item->created_at->format('Y');
+        });//get Year
+        $tahun=(array_keys($pengajuan->toArray()));
+        //bar2
+        $a = Pesanan::where('status',0)->count();
+        $b = Pesanan::where('status',1)->count();
+        $c = Pesanan::where('status',2)->count();
+        $d = Pesanan::where('status',3)->count();
+        $e = Pesanan::where('status',4)->count();
+        $pie = [$a,$b,$c,$d,$e];
+       
+        $fixpie = json_encode($pie);
+        $bar2max  = max($pie);
+
+        }
+
+        return view('admin.dashboard.index', compact('kategori','tahun','Totalpesanan','bar1','fixpie','barmax','bar2max'));
+
+
     }
     public function dashboardKades(){
          $kategori = KategoriSurat::get();

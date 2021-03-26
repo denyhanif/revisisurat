@@ -177,6 +177,11 @@
             <i class="fas fa-fw fa-history"></i>
             <span>Riwayat Pemesanan</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('warga.info') }}">
+            <i class="fas fa-fw fa-info-circle"></i>
+            <span>Informasi Surat</span></a>
+        </li>
   
         <li class="nav-item">
           <a class="nav-link" href="{{ route('warga.logout') }}">
